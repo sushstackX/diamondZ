@@ -1,0 +1,62 @@
+/* ================= SECTION ================= */
+.partners {
+  background: #f4f7fb;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* ================= CONTAINER ================= */
+.partners-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.partners-header {
+  margin-bottom: 60px;
+}
+
+.partners-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #3a7cff;
+  margin-bottom: 10px;
+}
+
+.partners-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: #111;
+}
+
+/* ================= GRID ================= */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ================= CARD ================= */
+.partner-card {
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:var(--black3);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ================= LOGO ================= */
+.partner-card img {
+  max-width: 100%;
+  max-height: 40px;
+  object-fit: contain;
+
+  /* 🔥 important for visibility */
+  display: block;
+}

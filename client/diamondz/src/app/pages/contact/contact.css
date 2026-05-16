@@ -1,0 +1,225 @@
+
+/* ================= HERO BANNER ================= */
+.contact-banner {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.75);
+}
+
+.banner-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.banner-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #d6eaff;
+  letter-spacing: -0.5px;
+}
+
+.banner-content p {
+  font-size: 16px;
+  color: #c8d8e8;
+  margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA BUTTON */
+.banner-btn {
+  margin-top: 22px;
+  background: #1565c0;
+  color: var(--black-dark);
+  border: none;
+  padding: 12px 26px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px rgba(21, 101, 192, 0.4);
+}
+
+.banner-btn:hover {
+  background: #42a5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(66, 165, 245, 0.6);
+}
+
+/* ================= CONTACT WRAPPER ================= */
+.contact-wrapper {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 90px 40px;
+
+  /* subtle luxury grid */
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* ================= LEFT SIDE ================= */
+.contact-info .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  color: var(--black-dark);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.highlight {
+  color: #1565c0;
+}
+
+.contact-info p {
+  line-height: 1.7;
+}
+
+/* INFO LIST */
+.info-list {
+  color: var(--black-dark);
+  font-size: 14px;
+  line-height: 2.2;
+  margin-top: 20px;
+}
+
+.info-list p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CONTACT BOX */
+.contact-box {
+  border-left: 3px solid #1565c0;
+  padding-left: 16px;
+  margin-top: 30px;
+ color: var(--black-dark);
+  line-height: 2;
+}
+
+.contact-box p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================= RIGHT FORM ================= */
+.contact-form {
+  background: #ffffff;
+  color: var(--black-dark);
+
+  padding: 45px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12); 
+} 
+
+/* INPUTS */
+input,
+textarea,
+select {
+  width: 100%;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  color: var(--black-dark);
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* FOCUS */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1565c0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(21, 101, 192, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(21, 101, 192, 0.35);
+}
+
+.text-muted {
+    color: var(--black-dark);
+    font-weight: 500;
+
+
+}
+/* ================= ICONS ================= */
+i {
+  color: #1565c0;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info .title {
+    font-size: 32px;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+  }
+
+  .contact-wrapper {
+    padding: 60px 20px;
+  }
+}

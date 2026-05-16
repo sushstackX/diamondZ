@@ -1,0 +1,34 @@
+<section class="ppf-process">
+
+  <div class="process-container">
+
+    <!-- HEADER -->
+    <div class="process-header">
+      <p class="process-eyebrow">HOW IT WORKS</p>
+      <h2 class="process-title">PPF Application Process</h2>
+    </div>
+
+    <!-- FLOW -->
+    <div class="process-flow">
+
+      <ng-container *ngFor="let step of steps; let i = index">
+
+        <!-- CARD -->
+        <div class="step">
+          <lucide-icon [img]="step.icon" class="icon"></lucide-icon>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+
+        <!-- ARROW -->
+        <div class="arrow" *ngIf="i !== steps.length - 1">
+          <lucide-icon [img]="arrowIcon"></lucide-icon>
+        </div>
+
+      </ng-container>
+
+    </div>
+
+  </div>
+
+</section>

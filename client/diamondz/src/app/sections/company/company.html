@@ -1,0 +1,55 @@
+<section class="company">
+
+  <div class="company-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="company-left">
+
+      <h2 class="company-title">DiamondZ PPF</h2>
+
+      <p class="company-text">
+        We are a premium Paint Protection Film (PPF) studio dedicated to preserving the finish
+         and value of your vehicle. Every installation is performed with precision, 
+         using high-quality materials and meticulous attention to detail.
+      </p>
+
+      <p class="company-text">
+        What sets us apart is our commitment to perfection — from thorough surface preparation
+         to flawless film application. We work in controlled conditions to ensure a clean, 
+         seamless finish with no compromise.
+      </p>
+
+        <p class="company-text">
+        Whether it’s a daily driver or a high-performance vehicle, we treat every car with the same 
+        level of care and craftsmanship.
+
+        Our process is designed to deliver long-lasting protection, enhanced appearance, and complete
+        peace of mind.
+      </p>
+
+    </div>
+
+    <!-- RIGHT SLIDER -->
+    <div class="company-right">
+
+      <div class="slider">
+
+        <div
+          *ngFor="let slide of slides; let i = index"
+          class="slide"
+          [class.active]="i === currentIndex"
+          [style.background-image]="'url(' + slide.image + ')'"
+        ></div>
+
+        <!-- LABEL -->
+        <div class="image-label">
+          <!-- {{ slides[currentIndex].label }} -->
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,99 @@
+<!-- ================= HERO BANNER ================= -->
+<div class="contact-banner">
+
+  <div class="banner-overlay"></div>
+
+  <div class="banner-content">
+
+    <h1 class="">DiamondZ PPF Network</h1>
+
+    <p>Premium Paint Protection Film Distribution for Automotive Professionals</p>
+
+    <button class="banner-btn" (click)="scrollToForm()">
+      <i class="fa-solid fa-user-plus"></i> Become a Dealer
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= CONTACT SECTION ================= -->
+<div class="section contact-wrapper" id="formSection">
+
+  <div class="container contact-grid">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+
+      <h2 class="title ">
+        Partner With DiamondZ <br />
+        <span class="highlight">PPF Network</span>
+      </h2>
+
+      <p class="text-muted mt-4">
+        We supply high-performance Paint Protection Films to dealers,
+        installers, detailing studios, and automotive brands worldwide.
+      </p>
+
+      <div class="info-list mt-8">
+
+        <p><i class="fa-solid fa-car-side"></i> Authorized Dealer Program</p>
+
+        <p><i class="fa-solid fa-boxes-stacked"></i> Wholesale & Bulk Supply</p>
+
+        <p><i class="fa-solid fa-shield-halved"></i> Certified Installer Network</p>
+
+        <p><i class="fa-solid fa-globe"></i> Pan-India Distribution</p>
+
+      </div>
+
+      <div class="contact-box mt-10">
+
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+        <p><i class="fa-solid fa-envelope"></i> sales@diamondzppf.com</p>
+
+        <p><i class="fa-solid fa-location-dot"></i> Bangalore, India</p>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+
+        <input type="text" formControlName="name" placeholder="Full Name" />
+
+        <input type="email" formControlName="email" placeholder="Business Email" />
+
+        <input type="text" formControlName="company" placeholder="Company Name" />
+
+        <select formControlName="inquiryType">
+          <option value="">Inquiry Type</option>
+          <option>Dealer Partnership</option>
+          <option>Installer Program</option>
+          <option>Bulk Order</option>
+          <option>Franchise</option>
+        </select>
+
+        <textarea rows="5" formControlName="message"
+          placeholder="Describe your requirement..."></textarea>
+
+        <button class="btn-primary" type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+        </button>
+
+      </form>
+
+      <!-- MESSAGES -->
+      <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

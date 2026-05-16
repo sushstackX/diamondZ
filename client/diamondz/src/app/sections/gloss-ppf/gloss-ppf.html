@@ -1,0 +1,95 @@
+<div class="gloss-wrapper" *ngIf="data">
+
+  <div class="gloss-container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>{{ data.hero?.title }}</h1>
+      <p>{{ data.hero?.description }}</p>
+    </div>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <div class="intro-card">
+
+        <img [src]="gallery[0]" />
+
+        <div class="intro-text">
+
+          <h2>Why {{ data.name }}?</h2>
+
+          <p>{{ data.whyChoose }}</p>
+
+          <!-- FEATURES -->
+          <div class="intro-features">
+
+            <div class="feature-row" *ngFor="let f of features">
+
+              <span class="icon">✓</span>
+
+              <div>
+                <h4>{{ f.title }}</h4>
+                <p>{{ f.description }}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WARRANTY -->
+      <div class="section">
+
+        <h2>Warranty Coverage</h2>
+
+        <div class="warranty-plans">
+
+          <div class="plan-card" *ngFor="let plan of warrantyPlans">
+
+            <div class="plan-header">
+              <h3>{{ plan.years }} Years Warranty</h3>
+              <p *ngIf="plan.title">{{ plan.title }}</p>
+            </div>
+
+            <div class="plan-body">
+
+              <div class="plan-point" *ngFor="let p of plan.points">
+                <span class="tick">✓</span>
+                <span>{{ p }}</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="section">
+
+        <h2>Gallery</h2>
+
+        <div class="card-slider-wrapper">
+
+          <div class="card-slider-track"
+               [style.transform]="transformStyle">
+
+            <div class="gallery-card" *ngFor="let img of gallery">
+              <img [src]="img" />
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

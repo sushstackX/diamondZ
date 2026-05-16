@@ -1,0 +1,35 @@
+<section class="products">
+
+  <div class="products-header">
+    <h2>Our PPF Finishes</h2>
+  </div>
+
+  <div class="products-slider">
+
+    <div class="product-card" *ngFor="let item of products">
+
+      <!-- IMAGE -->
+      <div
+        class="product-img"
+        [style.background-image]="'url(' + item.image + ')'"
+      ></div>
+
+      <!-- CONTENT -->
+      <div class="product-content">
+
+        <h3>{{ item.title }}</h3>
+
+        <p>{{ item.description }}</p>
+         <button
+          class="btn-read"
+          [routerLink]="item.link">
+          Read More →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

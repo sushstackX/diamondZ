@@ -1,0 +1,163 @@
+<!-- HERO SECTION -->
+<section class="about-hero">
+
+  <!-- OVERLAY -->
+  <div class="hero-overlay"></div>
+
+  <!-- GLOW -->
+  <div class="hero-glow"></div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+
+    <p class="hero-subtitle">
+      Premium Automotive Protection
+    </p>
+
+    <h1 class="hero-title">
+      About
+      <span>DiamondZ</span>
+      PPF
+    </h1>
+
+    <p class="hero-description">
+      Delivering Luxury Paint Protection Film
+      Solutions For High-End Automotive Excellence
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- INFO SECTION -->
+<section class="about-info-section">
+
+  <div class="about-grid">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <p class="section-subtitle">
+        Inside DiamondZ
+      </p>
+
+      <h2 class="section-title">
+        Premium Protection
+        For Luxury Vehicles
+      </h2>
+
+      <p class="section-text">
+
+        DiamondZ PPF delivers premium Paint Protection
+        Film solutions designed for luxury, sports
+        and modern vehicles with advanced durability
+        and flawless finish quality.
+
+      </p>
+
+      <p class="section-text">
+
+        Our high-performance TPU films offer
+        exceptional gloss, self-healing technology
+        and long-lasting protection against scratches,
+        stone chips and daily environmental damage.
+
+      </p>
+
+      <p class="section-text">
+
+        From Gloss and Matte finishes to exclusive
+        Colored Protection Films, we combine
+        innovation, elegance and performance
+        to redefine automotive surface protection.
+
+      </p>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="image-wrapper">
+
+      <img
+        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
+        alt=""
+        class="about-image"
+      >
+
+      <!-- FLOATING CARD -->
+      <div class="floating-card">
+
+        <h3>10+</h3>
+
+        <p>
+          Years Of Automotive Protection
+          Industry Excellence
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PARALLAX IMAGE SECTION -->
+<section class="parallax-break">
+
+  <!-- OVERLAY -->
+  <div class="parallax-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="parallax-content">
+
+    <p>
+      Luxury Protection • Premium Finish • Lasting Performance
+    </p>
+
+    <h2>
+      Crafted For Automotive Excellence
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-section">
+
+  <div class="why-container">
+
+    <div class="why-header">
+      <p class="section-subtitle">Why Choose Us</p>
+      <h2 class="why-title">Excellence Built Into Every Detail</h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card" *ngFor="let item of whyChooseUs">
+
+        <div class="why-top">
+
+          <div class="why-number">
+            {{ item.number }}
+          </div>
+
+          <h3>{{ item.title }}</h3>
+
+        </div>
+
+        <p>{{ item.description }}</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,35 @@
+<section class="vision">
+
+  <!-- BACKGROUND IMAGE -->
+  <div class="vision-bg"></div>
+
+  <!-- OVERLAY -->
+  <div class="vision-overlay">
+
+    <!-- TITLE -->
+    <div class="vision-header">
+      <p class="eyebrow">OUR FOUNDATION</p>
+      <h2 class="title">Our Vision & Impact</h2>
+    </div>
+
+    <div class="vision-container">
+
+      <div class="vision-item" *ngFor="let item of visionData">
+
+        <h3>{{ item.title }}</h3>
+
+        <!-- DOUBLE UNDERLINE -->
+        <div class="underline">
+          <span></span>
+          <span></span>
+        </div>
+
+        <p class="vision-des">{{ item.description }}</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

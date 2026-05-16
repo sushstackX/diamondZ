@@ -1,0 +1,48 @@
+<nav class="navbar">
+
+  <!-- LOGO -->
+  <div class="logo">
+    DiamondZ<span>◆</span>PPF
+  </div>
+
+  <!-- NAV LINKS -->
+  <div class="nav-links">
+
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+
+    <!-- SERVICES DROPDOWN -->
+    <div class="dropdown">
+
+      <a class="dropdown-toggle" (click)="toggleServices()">
+        Services ▾
+      </a>
+
+      <div class="dropdown-menu" *ngIf="isServicesOpen">
+
+        <a
+          *ngFor="let service of services"
+          [routerLink]="service.route"
+          (click)="closeDropdown()">
+
+          {{ service.name }}
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <a routerLink="/about" routerLinkActive="active">About</a>
+
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+
+  </div>
+
+  <!-- BUTTON -->
+  <button routerLink="/quote" class="quote-btn">
+    Get A Quote
+  </button>
+
+</nav>

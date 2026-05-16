@@ -1,0 +1,22 @@
+<section class="partners">
+
+  <div class="partners-container">
+
+    <!-- HEADER -->
+    <div class="partners-header">
+      <p class="partners-eyebrow">TRUSTED BY</p>
+      <h2 class="partners-title">Our Global Partners</h2>
+    </div>
+
+    <!-- LOGO GRID -->
+    <div class="partners-grid">
+
+      <div class="partner-card" *ngFor="let item of partners">
+        <img [src]="item.logo" [alt]="item.name" />
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

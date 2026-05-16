@@ -1,0 +1,120 @@
+/* HERO CONTAINER */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ move left */
+  padding-left: 60px; }
+
+/* BACKGROUND WRAPPER */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* EACH SLIDE */
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease-in-out, transform 6s ease-in-out;
+}
+
+/* ACTIVE SLIDE */
+.bg-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* DARK OVERLAY */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 26, 0.8),
+    rgba(17, 17, 26, 0.4)
+  );
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+/* TEXT */
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7aa6ff;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #7aa6ff;
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background: rgba(122,166,255,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(122,166,255,0.4);
+  color: white;
+  padding: 10px 22px;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* OUTLINE BUTTON */
+.btn-outline {
+  background: transparent;
+  border: 1px solid #2a3d5a;
+  color: white;
+  padding: 10px 22px;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: #7aa6ff;
+  color: #7aa6ff;
+}

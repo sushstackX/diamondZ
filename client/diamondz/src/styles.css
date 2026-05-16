@@ -1,0 +1,110 @@
+/* ================= GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ================= TAILWIND ================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= ROOT VARIABLES (THEME) ================= */
+:root {
+  /* DARK BASE */
+  /* --black: #0a0a0f;
+  --black2: #12121a;
+  --black3: #1a1a26; */
+--black: linear-gradient(135deg, #070b14 0%, #0f172a 50%, #111827 100%);
+--black2: linear-gradient(135deg, #0b1120 0%, #111827 50%, #1e293b 100%);
+--black3: linear-gradient(135deg, #111827 0%, #1e293b 50%, #334155 100%);
+
+  /* PRIMARY (BLUE SYSTEM) */
+  --primary: #1565c0;
+  --primary-mid: #1976d2;
+  --primary-light: #42a5f5;
+  --primary-glow: #0d47a1;
+  --secondary-glow: #19345e;
+
+  /* --primary: linear-gradient(135deg, #0d47a1 0%, #1565c0 40%, #42a5f5 100%);
+--primary-mid: linear-gradient(135deg, #1565c0 0%, #1e88e5 50%, #64b5f6 100%);
+--primary-light: linear-gradient(135deg, #42a5f5 0%, #90caf9 100%);
+--primary-glow: radial-gradient(circle, rgba(21,101,192,0.45) 0%, rgba(13,71,161,0.08) 70%, transparent 100%);
+--secondary-glow: radial-gradient(circle, rgba(25,52,94,0.35) 0%, rgba(15,23,42,0.08) 70%, transparent 100%);
+  */
+
+  /* TEXT COLORS */
+  --white: #EAF4FF;
+  --white-dim: #EAF4FF;
+  --silver: #c8d8e8;
+  --silver-dim: #8aa0b8;
+  --silver-dark: #546475;
+  --silver-medium : #1d2125;
+  --black-dark : #000000;
+
+  /* ACCENT */
+  --diamond-bright: #d6eaff;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ================= TYPOGRAPHY ================= */
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ================= COMMON BUTTONS ================= */
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-mid);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
+  padding: 10px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--primary-light);
+  color: var(--black);
+}
+
+/* ================= GLOBAL UTILITIES ================= */
+.section {
+  padding: 100px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.text-muted {
+  color: var(--silver-dim);
+}

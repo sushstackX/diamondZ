@@ -1,0 +1,1105 @@
+﻿
+> diamondz@0.0.0 start
+> ng serve
+
+[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+Application bundle generation failed. [3.797 seconds] - 2026-04-25T16:17:10.099Z
+
+npm : [1m[33m[33mΓû▓ [43;33m[[43;30mWARNING[43;33m][0m [1mImport 
+"routes" will always be undefined because the file "src/app/app.routes.ts" has 
+no exports[0m [import-is-undefined]
+At line:1 char:1
++ npm start 2>&1 | Out-File -FilePath .\run-output.txt -Encoding utf8
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([1m[33m[33mΓ...t-is-undefined] 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+    src/app/app.config.ts:3:9:
+[37m      3 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2459: Module 
+'"./app.routes"' declares 'routes' locally, but it is not exported.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/app.config.ts:4:9:
+[37m      4 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+  'routes' is declared here.
+
+    src/app/app.routes.ts:8:6:
+[37m      8 Γöé const [32mroutes[37m: Routes = [
+        Γò╡       [32m~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' is not a 
+known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/about/about.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component About.
+
+    src/app/pages/about/about.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./about.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/about/about.html:8:0:
+[37m      8 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component About.
+
+    src/app/pages/about/about.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./about.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' is not a 
+known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-hero' is not a 
+known element:
+1. If 'app-hero' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-hero' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:3:0:
+[37m      3 Γöé [32m<app-hero>[37m</app-hero>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:4:0:
+[37m      4 Γöé [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-gallery' is not a 
+known element:
+1. If 'app-gallery' is an Angular component, then verify that it is included 
+in the '@Component.imports' of this component.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to 
+the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:5:0:
+[37m      5 Γöé [32m<app-gallery>[37m</app-gallery>
+        Γò╡ [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-team' is not a 
+known element:
+1. If 'app-team' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-team' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:6:0:
+[37m      6 Γöé [32m<app-team>[37m</app-team>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-booking-strip' is 
+not a known element:
+1. If 'app-booking-strip' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-booking-strip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:7:0:
+Watch mode enabled. Watching for file changes...
+[37m      7 Γöé [32m<app-booking-strip>[37m</app-booking-strip>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:9:0:
+[37m      9 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' is not a 
+known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/services/services.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Services.
+
+    src/app/pages/services/services.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./services.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/services/services.html:7:2:
+[37m      7 Γöé   [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡   [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Services.
+
+    src/app/pages/services/services.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./services.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [1.312 seconds] - 2026-04-25T16:18:39.058Z
+
+[1m[33m[33mΓû▓ [43;33m[[43;30mWARNING[43;33m][0m [1mImport "routes" 
+will always be undefined because the file "src/app/app.routes.ts" has no 
+exports[0m [import-is-undefined]
+
+    src/app/app.config.ts:3:9:
+[37m      3 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2459: Module 
+'"./app.routes"' declares 'routes' locally, but it is not exported.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/app.config.ts:4:9:
+[37m      4 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+  'routes' is declared here.
+
+    src/app/app.routes.ts:8:6:
+[37m      8 Γöé const [32mroutes[37m: Routes = [
+        Γò╡       [32m~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' is not a 
+known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/about/about.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component About.
+
+    src/app/pages/about/about.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./about.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/about/about.html:8:0:
+[37m      8 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component About.
+
+    src/app/pages/about/about.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./about.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.553 seconds] - 2026-04-25T16:19:41.803Z
+
+[1m[33m[33mΓû▓ [43;33m[[43;30mWARNING[43;33m][0m [1mImport "routes" 
+will always be undefined because the file "src/app/app.routes.ts" has no 
+exports[0m [import-is-undefined]
+
+    src/app/app.config.ts:3:9:
+[37m      3 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2459: Module 
+'"./app.routes"' declares 'routes' locally, but it is not exported.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/app.config.ts:4:9:
+[37m      4 Γöé import { [32mroutes[37m } from './app.routes';
+        Γò╡          [32m~~~~~~[0m
+
+  'routes' is declared here.
+
+    src/app/app.routes.ts:8:6:
+[37m      8 Γöé const [32mroutes[37m: Routes = [
+        Γò╡       [32m~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m     
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mmain.js[39m             [2m | [22m[2mmain[22m            [2m | [22m [36m70.93 kB[39m[2m | [22m
+[32mstyles.css[39m          [2m | [22m[2mstyles[22m          [2m | [22m [36m22.77 kB[39m[2m | [22m
+
+[1m [22m                   [2m | [22m[1mInitial total[22m   [2m | [22m [1m93.70 kB[22m
+
+
+[35mServer bundles[39m      
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mmain.server.mjs[39m     [2m | [22m[2mmain.server[22m     [2m | [22m [36m72.07 kB[39m[2m | [22m
+[32mserver.mjs[39m          [2m | [22m[2mserver[22m          [2m | [22m  [36m1.84 kB[39m[2m | [22m
+[32mpolyfills.server.mjs[39m[2m | [22m[2mpolyfills.server[22m[2m | [22m[36m268 bytes[39m[2m | [22m
+
+Application bundle generation complete. [0.650 seconds] - 2026-04-25T16:19:54.680Z
+
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32mΓ₧£[39m  [1mLocal[22m:   [36mhttp://localhost:[1m4200[22m/[39m
+[2m[32m  Γ₧£[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m    
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m       [2m | [22m[36m71.16 kB[39m[2m | [22m
+
+
+[35mServer bundles[39m     
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.server.mjs[39m    [2m | [22m[2mmain.server[22m[2m | [22m[36m72.30 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.485 seconds] - 2026-04-25T16:20:43.844Z
+
+Page reload sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m    
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m       [2m | [22m[36m71.17 kB[39m[2m | [22m
+
+
+[35mServer bundles[39m     
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.server.mjs[39m    [2m | [22m[2mmain.server[22m[2m | [22m[36m72.32 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.209 seconds] - 2026-04-25T16:20:57.737Z
+
+Page reload sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m    
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m       [2m | [22m[36m24.67 kB[39m[2m | [22m
+
+
+[35mServer bundles[39m     
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.server.mjs[39m    [2m | [22m[2mmain.server[22m[2m | [22m[36m25.95 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.355 seconds] - 2026-04-25T16:22:51.984Z
+
+[1m[33m[33mΓû▓ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: All 
+imports are unused[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:7:2:
+[37m      7 Γöé   [32mimports[37m: [RouterOutlet],
+        Γò╡   [32m~~~~~~~[0m
+
+[39m[22m
+Component update sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m    
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m       [2m | [22m[36m25.32 kB[39m[2m | [22m
+
+
+[35mServer bundles[39m     
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.server.mjs[39m    [2m | [22m[2mmain.server[22m[2m | [22m[36m26.59 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.252 seconds] - 2026-04-25T16:23:01.760Z
+
+Component update sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.223 seconds] - 2026-04-25T16:23:48.325Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-home' is 
+not a known element:
+1. If 'app-home' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-home' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:10:0:
+[37m      10 Γöé [32m<app-home>[37m</app-home>
+         Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:8:15:
+[37m      8 Γöé   templateUrl: [32m'./app.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m     
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mmain.js[39m             [2m | [22m[2mmain[22m            [2m | [22m [36m25.32 kB[39m[2m | [22m
+[32mstyles.css[39m          [2m | [22m[2mstyles[22m          [2m | [22m [36m22.77 kB[39m[2m | [22m
+
+[1m [22m                   [2m | [22m[1mInitial total[22m   [2m | [22m [1m48.09 kB[22m
+
+
+[35mServer bundles[39m      
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mmain.server.mjs[39m     [2m | [22m[2mmain.server[22m     [2m | [22m [36m26.59 kB[39m[2m | [22m
+[32mserver.mjs[39m          [2m | [22m[2mserver[22m          [2m | [22m  [36m1.84 kB[39m[2m | [22m
+[32mpolyfills.server.mjs[39m[2m | [22m[2mpolyfills.server[22m[2m | [22m[36m268 bytes[39m[2m | [22m
+
+Application bundle generation complete. [0.253 seconds] - 2026-04-25T16:24:10.758Z
+
+Page reload sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m    
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m       [2m | [22m[36m24.78 kB[39m[2m | [22m
+
+
+[35mServer bundles[39m     
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m      [2m | [22m[1mRaw size[22m
+[32mmain.server.mjs[39m    [2m | [22m[2mmain.server[22m[2m | [22m[36m26.05 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.264 seconds] - 2026-04-25T16:26:18.323Z
+
+Component update sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.347 seconds] - 2026-04-25T16:27:06.890Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-hero' is not a 
+known element:
+1. If 'app-hero' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-hero' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:3:0:
+[37m      3 Γöé [32m<app-hero>[37m</app-hero>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:4:0:
+[37m      4 Γöé [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-gallery' is not a 
+known element:
+1. If 'app-gallery' is an Angular component, then verify that it is included 
+in the '@Component.imports' of this component.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to 
+the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:5:0:
+[37m      5 Γöé [32m<app-gallery>[37m</app-gallery>
+        Γò╡ [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-team' is not a 
+known element:
+1. If 'app-team' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-team' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:6:0:
+[37m      6 Γöé [32m<app-team>[37m</app-team>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-booking-strip' is 
+not a known element:
+1. If 'app-booking-strip' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-booking-strip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:7:0:
+[37m      7 Γöé [32m<app-booking-strip>[37m</app-booking-strip>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:9:0:
+[37m      9 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.147 seconds] - 2026-04-25T16:27:16.217Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-hero' is not a 
+known element:
+1. If 'app-hero' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-hero' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:3:0:
+[37m      3 Γöé [32m<app-hero>[37m</app-hero>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:4:0:
+[37m      4 Γöé [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-gallery' is not a 
+known element:
+1. If 'app-gallery' is an Angular component, then verify that it is included 
+in the '@Component.imports' of this component.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to 
+the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:5:0:
+[37m      5 Γöé [32m<app-gallery>[37m</app-gallery>
+        Γò╡ [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-team' is not a 
+known element:
+1. If 'app-team' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-team' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:6:0:
+[37m      6 Γöé [32m<app-team>[37m</app-team>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-booking-strip' is 
+not a known element:
+1. If 'app-booking-strip' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-booking-strip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:7:0:
+[37m      7 Γöé [32m<app-booking-strip>[37m</app-booking-strip>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:9:0:
+[37m      9 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.180 seconds] - 2026-04-25T16:27:34.507Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-hero' is not a 
+known element:
+1. If 'app-hero' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-hero' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:3:0:
+[37m      3 Γöé [32m<app-hero>[37m</app-hero>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:4:0:
+[37m      4 Γöé [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-gallery' is not a 
+known element:
+1. If 'app-gallery' is an Angular component, then verify that it is included 
+in the '@Component.imports' of this component.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to 
+the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:5:0:
+[37m      5 Γöé [32m<app-gallery>[37m</app-gallery>
+        Γò╡ [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-team' is not a 
+known element:
+1. If 'app-team' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-team' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:6:0:
+[37m      6 Γöé [32m<app-team>[37m</app-team>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-booking-strip' is 
+not a known element:
+1. If 'app-booking-strip' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-booking-strip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:7:0:
+[37m      7 Γöé [32m<app-booking-strip>[37m</app-booking-strip>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:9:0:
+[37m      9 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[35mBrowser bundles[39m     
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mstyles.css[39m          [2m | [22m[2mstyles[22m          [2m | [22m [36m22.77 kB[39m[2m | [22m
+[32mmain.js[39m             [2m | [22m[2mmain[22m            [2m | [22m [36m17.68 kB[39m[2m | [22m
+
+[1m [22m                   [2m | [22m[1mInitial total[22m   [2m | [22m [1m40.46 kB[22m
+
+
+[35mServer bundles[39m      
+[1mInitial chunk files[22m [2m | [22m[1mNames[22m           [2m | [22m [1mRaw size[22m
+[32mmain.server.mjs[39m     [2m | [22m[2mmain.server[22m     [2m | [22m [36m18.95 kB[39m[2m | [22m
+[32mserver.mjs[39m          [2m | [22m[2mserver[22m          [2m | [22m  [36m1.84 kB[39m[2m | [22m
+[32mpolyfills.server.mjs[39m[2m | [22m[2mpolyfills.server[22m[2m | [22m[36m268 bytes[39m[2m | [22m
+
+Application bundle generation complete. [0.172 seconds] - 2026-04-25T16:27:45.831Z
+
+Page reload sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+[1mInitial chunk files[22m[2m | [22m[1mNames[22m[2m | [22m[1mRaw size[22m
+[32mmain.js[39m            [2m | [22m[2mmain[22m [2m | [22m[36m17.32 kB[39m[2m | [22m
+
+Application bundle generation complete. [0.298 seconds] - 2026-04-25T16:28:02.753Z
+
+Page reload sent to client(s).
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.181 seconds] - 2026-04-25T16:28:49.233Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.202 seconds] - 2026-04-25T16:29:05.237Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m
+[33mΓ¥»[39m Changes detected. Rebuilding...
+[32mΓ£ö[39m Changes detected. Rebuilding...
+Application bundle generation failed. [0.289 seconds] - 2026-04-25T16:29:22.636Z
+
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-navbar' 
+is not a known element:
+1. If 'app-navbar' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:0:0:
+[37m      0 Γöé [32m[37m
+        Γò╡ [32m^[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-hero' is not a 
+known element:
+1. If 'app-hero' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-hero' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:3:0:
+[37m      3 Γöé [32m<app-hero>[37m</app-hero>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-services-preview' 
+is not a known element:
+1. If 'app-services-preview' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-services-preview' is a Web Component then add 
+'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to 
+suppress this message.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:4:0:
+[37m      4 Γöé [32m<app-services-preview>[37m</app-services-preview>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-gallery' is not a 
+known element:
+1. If 'app-gallery' is an Angular component, then verify that it is included 
+in the '@Component.imports' of this component.
+2. If 'app-gallery' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to 
+the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:5:0:
+[37m      5 Γöé [32m<app-gallery>[37m</app-gallery>
+        Γò╡ [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-team' is not a 
+known element:
+1. If 'app-team' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-team' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:6:0:
+[37m      6 Γöé [32m<app-team>[37m</app-team>
+        Γò╡ [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-booking-strip' is 
+not a known element:
+1. If 'app-booking-strip' is an Angular component, then verify that it is 
+included in the '@Component.imports' of this component.
+2. If 'app-booking-strip' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' 
+to the '@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:7:0:
+[37m      7 Γöé [32m<app-booking-strip>[37m</app-booking-strip>
+        Γò╡ [32m~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG8001: 'app-footer' is not a 
+known element:
+1. If 'app-footer' is an Angular component, then verify that it is included in 
+the '@Component.imports' of this component.
+2. If 'app-footer' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the 
+'@Component.schemas' of this component to suppress this message.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/home/home.html:9:0:
+[37m      9 Γöé [32m<app-footer>[37m</app-footer>
+        Γò╡ [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Home.
+
+    src/app/pages/home/home.ts:6:15:
+[37m      6 Γöé   templateUrl: [32m'./home.html'[37m,
+        Γò╡                [32m~~~~~~~~~~~~~[0m
+
+[39m[22m

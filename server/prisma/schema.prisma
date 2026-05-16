@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProcessStep  {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  icon        String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Benefit {
+  id        Int      @id @default(autoincrement())
+  title     String
+  icon      String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model FAQ {
+  id        Int      @id @default(autoincrement())
+  question  String
+  answer    String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+
+model PpfType {
+  id          Int              @id @default(autoincrement())
+
+  name        String
+  slug        String           @unique
+
+  shortDesc   String?
+  whyChoose   String?
+
+  heroTitle   String?
+  heroDesc    String?
+
+  icon        String?
+  isActive    Boolean          @default(true)
+
+  images      PpfTypeImage[]
+  features    PpfFeature[]
+  warranties  PpfWarranty[]
+
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model PpfTypeImage {
+  id         Int      @id @default(autoincrement())
+
+  imageUrl   String
+  altText    String?
+  isPrimary  Boolean  @default(false)
+
+  ppfTypeId  Int
+  ppfType    PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model PpfFeature {
+  id          Int      @id @default(autoincrement())
+
+  title       String
+  description String
+
+  ppfTypeId   Int
+  ppfType     PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PpfWarranty {
+  id          Int      @id @default(autoincrement())
+
+  years       Int
+  title       String?
+
+  points      Json     // ["UV Protection", "Scratch Resistance"]
+
+  ppfTypeId   Int
+  ppfType     PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

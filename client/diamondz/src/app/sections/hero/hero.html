@@ -1,0 +1,37 @@
+<section class="hero">
+
+  <!-- BACKGROUND SLIDER -->
+  <div class="hero-bg">
+
+    <div
+      *ngFor="let img of images; let i = index"
+      class="bg-slide"
+      [class.active]="i === currentIndex"
+      [style.background-image]="'url(' + img + ')'"
+    ></div>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="hero-overlay">
+
+    <p class="hero-eyebrow">
+      From Factory Fresh to Forever Fresh
+    </p>
+
+    <h1 class="hero-title">
+      Where Protection Meets <span>Perfection</span>
+    </h1>
+
+    <p class="hero-sub">
+      Diamond-grade beauty treatments tailored to you.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn-primary">Book Appointment</button>
+      <button class="btn-outline">View Services</button>
+    </div>
+
+  </div>
+
+</section>

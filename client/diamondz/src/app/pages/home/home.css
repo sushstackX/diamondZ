@@ -1,0 +1,94 @@
+
+/* products */
+
+.products {
+  background: #e7e7e9;
+  color: rgb(22, 9, 9);
+  padding: 100px 40px;
+  text-align: center;
+}
+
+/* HEADER */
+.products-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.products-title {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* PRODUCT BOX */
+.product-box {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: transform 0.5s ease;
+}
+
+.product-box:hover {
+  transform: scale(1.03);
+}
+
+/* DARK OVERLAY */
+.product-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  transition: background 0.4s ease;
+}
+
+.product-box:hover::before {
+  background: rgba(0,0,0,0.3);
+}
+
+/* TEXT OVERLAY */
+.product-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  text-align: left;
+
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.product-box:hover .product-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.product-overlay h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.product-overlay p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

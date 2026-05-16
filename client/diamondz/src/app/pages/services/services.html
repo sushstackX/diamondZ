@@ -1,0 +1,28 @@
+<!-- IMAGE SECTION (TOP) -->
+<div class="image-section">
+  <div class="image-overlay">
+    <h1>Paint Protection Film (PPF)</h1>
+    <p>Protect your car with premium finish options</p>
+  </div>
+</div>
+
+<!-- CONTENT SECTION (BOTTOM) -->
+<div class="content-section">
+
+  <!-- Navigation -->
+  <div class="service-nav">
+    <a *ngFor="let s of services"
+   [routerLink]="['/ppf', s.slug]">
+
+  {{ s.name }}
+
+</a>
+  </div>
+
+  <!-- Routed Content -->
+  <div class="service-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+<app-footer></app-footer>

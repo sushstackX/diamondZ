@@ -1,0 +1,48 @@
+<section class="ppf-process">
+
+  <div class="process-container">
+
+    <!-- HEADER -->
+    <div class="process-header">
+      <p class="process-eyebrow">HOW IT WORKS</p>
+      <h2 class="process-title">How Paint Protection Film is Applied</h2>
+    </div>
+
+    <!-- LOADING STATE -->
+    <p *ngIf="loading">
+      Loading process steps...
+    </p>
+
+    <!-- ERROR STATE -->
+    <p *ngIf="error">
+      Failed to load data. Please refresh.
+    </p>
+
+    <!-- FLOW -->
+    <div class="process-flow" *ngIf="!loading && steps.length > 0">
+
+      <ng-container *ngFor="let step of steps; let i = index">
+
+        <div class="step">
+          <lucide-icon [img]="step.icon" class="icon"></lucide-icon>
+
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+
+        <div class="arrow" *ngIf="i !== steps.length - 1">
+          <lucide-icon [img]="arrowIcon"></lucide-icon>
+        </div>
+
+      </ng-container>
+
+    </div>
+
+    <!-- EMPTY STATE -->
+    <p *ngIf="!loading && steps.length === 0 && !error">
+      No process steps found.
+    </p>
+
+  </div>
+
+</section>

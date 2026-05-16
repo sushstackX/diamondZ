@@ -1,0 +1,253 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 60px;
+
+  background: #12121a;
+
+  border-bottom: 1px solid #1e2a3a;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  font-size: 24px;
+  font-family: serif;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: #d6eaff;
+
+  cursor: pointer;
+}
+
+.logo span {
+  color: #60a5fa;
+}
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a.active {
+  color: white;
+}
+
+/* ONLY MAIN LINKS UNDERLINE */
+.nav-links > a::after {
+  content: '';
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #3b82f6;
+
+  transition: 0.3s ease;
+}
+
+.nav-links > a:hover::after,
+.nav-links > a.active::after {
+  width: 100%;
+}
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  color: #9ca3af;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  color: white;
+}
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+
+  background: #0f172a;
+
+  min-width: 220px;
+
+  border: 1px solid #1e2a3a;
+  border-radius: 6px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+  overflow: hidden;
+
+  z-index: 99999;
+}
+
+.dropdown-menu a {
+  display: block;
+
+  padding: 12px 16px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  transition: 0.3s ease;
+
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #1e293b;
+  color: white;
+}
+
+/* REMOVE UNDERLINE FROM DROPDOWN ITEMS */
+.dropdown-menu a::after {
+  display: none;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.quote-btn {
+  border: none;
+
+  background: #2563eb;
+
+  color: white;
+
+  padding: 12px 24px;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.quote-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 18px 24px;
+  }
+
+  .nav-links {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a,
+  .dropdown-toggle {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .quote-btn {
+    padding: 10px 18px;
+    font-size: 10px;
+  }
+}

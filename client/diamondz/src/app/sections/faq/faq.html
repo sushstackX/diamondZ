@@ -1,0 +1,52 @@
+<section class="faq">
+
+  <div class="faq-container">
+
+    <!-- HEADER -->
+    <div class="faq-header">
+      <p class="faq-eyebrow">SUPPORT</p>
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+    </div>
+
+    <!-- LOADING -->
+    <p *ngIf="loading">
+      Loading FAQs...
+    </p>
+
+    <!-- ERROR -->
+    <p *ngIf="error">
+      Failed to load FAQs. Please try again.
+    </p>
+
+    <!-- FAQ LIST -->
+    <div *ngIf="!loading && !error">
+
+      <div
+        class="faq-item"
+        *ngFor="let item of faqs; let i = index"
+      >
+
+        <div
+          class="faq-question"
+          (click)="toggleFAQ(i)"
+        >
+          <h3>{{ item.question }}</h3>
+
+          <span class="icon">
+            {{ item.open ? '−' : '+' }}
+          </span>
+        </div>
+
+        <div *ngIf="item.open">
+          <p class="faq-text">
+            {{ item.answer }}
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
