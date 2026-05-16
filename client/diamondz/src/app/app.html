@@ -1,6 +1,33 @@
-
 <app-navbar></app-navbar>
 
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
+
+<!-- WhatsApp Floating Button -->
+
+<a
+  href="https://wa.me/918073832554?text=Hi%20DiamondZ,%20I%20need%20PPF%20details"
+  target="_blank"
+  class="fixed bottom-5 right-5 z-[9999] group"
+>
+  <!-- Hover Text -->
+
+  <div
+    class="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-black px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap font-medium"
+  >
+    Chat With Us
+  </div>
+
+  <!-- WhatsApp Icon -->
+
+  <div
+    class="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-2xl whatsapp-pulse"
+  >
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      alt="WhatsApp"
+      class="w-9 h-9"
+    />
+  </div>
+</a>

@@ -1,21 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {
-  RouterOutlet,
-  RouterLink,
-  RouterLinkActive
-} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { NgFor } from '@angular/common';
+
+import { PpfService } from '../../services/ppf.service';
 
 @Component({
   selector: 'app-services',
   standalone: true,
 
   imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
+    RouterModule,
     NgFor
   ],
 
@@ -23,7 +19,7 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./services.css'],
 })
 
-export class Services {
+export class Services implements OnInit {
 
   services = [
 
@@ -47,23 +43,33 @@ export class Services {
 
   ];
 
-  selectService(service: any) {
+  constructor(private ppfService: PpfService) {}
 
-    sessionStorage.setItem(
+  ngOnInit() {
+    this.ppfService.prefetchSlugs(
+      this.services.map(service => service.slug)
+    );
+  }
+
+  selectService(service: any) {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return;
+    }
+
+    window.sessionStorage.setItem(
       'selectedServiceId',
       service.id
     );
 
-    sessionStorage.setItem(
+    window.sessionStorage.setItem(
       'selectedSlug',
       service.slug
     );
 
-    sessionStorage.setItem(
+    window.sessionStorage.setItem(
       'selectedServiceName',
       service.name
     );
-
   }
 
 }

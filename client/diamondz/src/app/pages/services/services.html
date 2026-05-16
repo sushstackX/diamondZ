@@ -25,10 +25,7 @@
   <a
     *ngFor="let s of services"
 
-    [routerLink]="s.slug"
-
-    routerLinkActive="active"
-
+    [routerLink]="['/services', s.slug]"
     (click)="selectService(s)"
   >
 

@@ -4,10 +4,9 @@ import { About } from './pages/about/about';
 import { Services } from './pages/services/services';
 import { Contact } from './pages/contact/contact';
 import { Quote } from './pages/quote/quote';
-import { ColoredPpf } from './sections/colored-ppf/colored-ppf';
-import { MattePpf } from './sections/matte-ppf/matte-ppf';
-import { GlossPpf } from './sections/gloss-ppf/gloss-ppf';
+
 import { PpfDetails } from './sections/ppf-details/ppf-details';
+import { PpfDetailsResolver } from './sections/ppf-details/ppf-details.resolver';
 
 
 export const routes: Routes = [
@@ -21,7 +20,11 @@ export const routes: Routes = [
 
       {
         path: ':slug',
-        component: PpfDetails
+        component: PpfDetails,
+        resolve: {
+          pageData: PpfDetailsResolver
+        },
+        runGuardsAndResolvers: 'paramsOrQueryParamsChange'
       },
 
       {

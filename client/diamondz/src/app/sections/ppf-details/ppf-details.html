@@ -1,8 +1,10 @@
-<div class="gloss-wrapper" *ngIf="pageData">
+<ng-container *ngIf="!loading && pageData; else waitingState">
 
-  <div class="gloss-container">
+  <div class="gloss-wrapper">
 
-    <!-- HEADER -->
+    <div class="gloss-container">
+
+      <!-- HEADER -->
     <div class="header">
 
       <h1>{{ pageData.title }}</h1>
@@ -118,3 +120,18 @@
   </div>
 
 </div>
+
+</ng-container>
+
+<ng-template #waitingState>
+  <div class="gloss-wrapper loading-state">
+    <div class="gloss-container">
+      <div class="header">
+        <h1 *ngIf="loading">Loading details...</h1>
+        <h1 *ngIf="!loading">Details unavailable</h1>
+        <p *ngIf="loading">Please wait while we load the selected PPF.</p>
+        <p *ngIf="!loading">The PPF details could not be loaded. Try refreshing again.</p>
+      </div>
+    </div>
+  </div>
+</ng-template>
