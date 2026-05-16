@@ -1,40 +1,69 @@
+import { Component } from '@angular/core';
+
+import {
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive
+} from '@angular/router';
+
 import { NgFor } from '@angular/common';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { Footer } from '../../layout/footer/footer';
-import { PpfService } from '../../services/ppf.service';
 
 @Component({
   selector: 'app-services',
   standalone: true,
+
   imports: [
     RouterOutlet,
     RouterLink,
-
-    NgFor,
-    Footer
+    RouterLinkActive,
+    NgFor
   ],
+
   templateUrl: './services.html',
   styleUrls: ['./services.css'],
 })
-export class Services implements OnInit {
 
-  services: any[] = [];
+export class Services {
 
-  constructor(
-    private ppfService: PpfService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  services = [
 
-  ngOnInit() {
+    {
+      id: 1,
+      name: 'Gloss PPF',
+      slug: 'gloss-ppf'
+    },
 
-    this.ppfService.getAll().subscribe(res => {
+    {
+      id: 2,
+      name: 'Matte PPF',
+      slug: 'matte-ppf'
+    },
 
-      this.services = res.data;
+    {
+      id: 3,
+      name: 'Colored PPF',
+      slug: 'colored-ppf'
+    }
 
-      this.cdr.detectChanges();
+  ];
 
-    });
+  selectService(service: any) {
+
+    sessionStorage.setItem(
+      'selectedServiceId',
+      service.id
+    );
+
+    sessionStorage.setItem(
+      'selectedSlug',
+      service.slug
+    );
+
+    sessionStorage.setItem(
+      'selectedServiceName',
+      service.name
+    );
 
   }
+
 }

@@ -32,68 +32,26 @@ model FAQ {
   createdAt DateTime @default(now())
 }
 
+model PpfPage {
 
-model PpfType {
-  id          Int              @id @default(autoincrement())
+  id                    Int      @id @default(autoincrement())
 
-  name        String
-  slug        String           @unique
+  title                 String
+  slug                  String   @unique
 
-  shortDesc   String?
-  whyChoose   String?
+  subtitle              String?
 
-  heroTitle   String?
-  heroDesc    String?
+  introTitle            String?
+  introDesc             String?
 
-  icon        String?
-  isActive    Boolean          @default(true)
+  features              Json
+  uniqueCharacteristics Json?
 
-  images      PpfTypeImage[]
-  features    PpfFeature[]
-  warranties  PpfWarranty[]
+  warranties            Json
+  gallery               Json
 
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
-}
+  isActive              Boolean  @default(true)
 
-model PpfTypeImage {
-  id         Int      @id @default(autoincrement())
-
-  imageUrl   String
-  altText    String?
-  isPrimary  Boolean  @default(false)
-
-  ppfTypeId  Int
-  ppfType    PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
-
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-}
-
-model PpfFeature {
-  id          Int      @id @default(autoincrement())
-
-  title       String
-  description String
-
-  ppfTypeId   Int
-  ppfType     PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model PpfWarranty {
-  id          Int      @id @default(autoincrement())
-
-  years       Int
-  title       String?
-
-  points      Json     // ["UV Protection", "Scratch Resistance"]
-
-  ppfTypeId   Int
-  ppfType     PpfType  @relation(fields: [ppfTypeId], references: [id], onDelete: Cascade)
-
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }

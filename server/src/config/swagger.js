@@ -3,6 +3,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const benefitDocs = require("../modules/benefit/benefit.swagger");
 const processStepDocs = require("../modules/processStep/processStep.swagger");
 const faqDocs = require("../modules/faq/faq.swagger");
+const ppfPageDocs = require("../modules/ppfPage/ppfPage.swagger");
 
 const options = {
   definition: {
@@ -21,32 +22,21 @@ const options = {
     ],
 
     tags: [
-      {
-        name: "Benefits",
-        description: "Benefits API",
-      },
-      {
-        name: "Process Steps",
-        description: "Process Steps API",
-      }
-      ,
-      {
-        name: "FAQ",
-        description: "FAQ API",
-      }
+      { name: "Benefits", description: "Benefits API" },
+      { name: "Process Steps", description: "Process Steps API" },
+      { name: "FAQ", description: "FAQ API" },
+      { name: "PPF Types", description: "PPF Types API" },
     ],
 
     paths: {
       ...benefitDocs.paths,
-      ...processStepDocs.paths
-      ,
-      ...faqDocs.paths
+      ...processStepDocs.paths,
+      ...faqDocs.paths,
+      ...ppfPageDocs.paths,
     },
   },
 
   apis: [],
 };
 
-const swaggerSpec = swaggerJsDoc(options);
-
-module.exports = swaggerSpec;
+module.exports = swaggerJsDoc(options);
