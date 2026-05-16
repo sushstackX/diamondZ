@@ -1,0 +1,120 @@
+<div class="gloss-wrapper" *ngIf="pageData">
+
+  <div class="gloss-container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+      <h1>{{ pageData.title }}</h1>
+
+      <p>{{ pageData.subtitle }}</p>
+
+    </div>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <div class="intro-card">
+
+        <img [src]="pageData.gallery[0]" />
+
+        <div class="intro-text">
+
+          <h2>{{ pageData.introTitle }}</h2>
+
+          <p>
+            {{ pageData.introDesc }}
+          </p>
+
+          <!-- FEATURES -->
+          <div class="intro-features">
+
+            <div
+              class="feature-row"
+              *ngFor="let f of pageData.features"
+            >
+
+              <span class="icon">✓</span>
+
+              <div>
+
+                <h4>{{ f.title }}</h4>
+
+                <p>{{ f.description }}</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- WARRANTY -->
+      <div class="section">
+
+        <h2>Warranty Coverage</h2>
+
+        <div class="warranty-plans">
+
+          <div
+            class="plan-card"
+            *ngFor="let w of pageData.warranties"
+          >
+
+            <div class="plan-header">
+
+              <h3>
+                {{ w.years }} Years Warranty
+              </h3>
+
+              <p>
+                {{ w.title }}
+              </p>
+
+            </div>
+
+            <div class="plan-body">
+
+              <div
+                class="plan-point"
+                *ngFor="let p of w.points"
+              >
+
+                <span class="tick">✓</span>
+
+                <span>{{ p }}</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- GALLERY -->
+      <div class="section">
+
+        <h2>Gallery</h2>
+
+        <div class="gallery">
+
+          <img
+            *ngFor="let img of pageData.gallery"
+            [src]="img"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

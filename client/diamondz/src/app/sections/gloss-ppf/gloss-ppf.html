@@ -1,27 +1,30 @@
-<div class="gloss-wrapper" *ngIf="data">
+<div class="gloss-wrapper">
 
   <div class="gloss-container">
 
     <!-- HEADER -->
     <div class="header">
-      <h1>{{ data.hero?.title }}</h1>
-      <p>{{ data.hero?.description }}</p>
+      <h1>Matte PPF Protection</h1>
+      <p>Premium invisible protection with matte finish</p>
     </div>
-
+ 
     <div class="content">
 
       <!-- INTRO -->
       <div class="intro-card">
 
-        <img [src]="gallery[0]" />
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" />
 
         <div class="intro-text">
 
-          <h2>Why {{ data.name }}?</h2>
+          <h2>Why Matte PPF?</h2>
 
-          <p>{{ data.whyChoose }}</p>
+          <p>
+            Matte PPF enhances your car’s original paint with a crystal-clear
+            protective layer that prevents scratches, UV damage, and stains
+            while maintaining a sophisticated matte appearance.
+          </p>
 
-          <!-- FEATURES -->
           <div class="intro-features">
 
             <div class="feature-row" *ngFor="let f of features">
@@ -30,7 +33,7 @@
 
               <div>
                 <h4>{{ f.title }}</h4>
-                <p>{{ f.description }}</p>
+                <p>{{ f.desc }}</p>
               </div>
 
             </div>
@@ -42,7 +45,6 @@
 
       <!-- WARRANTY -->
       <div class="section">
-
         <h2>Warranty Coverage</h2>
 
         <div class="warranty-plans">
@@ -51,7 +53,6 @@
 
             <div class="plan-header">
               <h3>{{ plan.years }} Years Warranty</h3>
-              <p *ngIf="plan.title">{{ plan.title }}</p>
             </div>
 
             <div class="plan-body">
@@ -68,22 +69,18 @@
         </div>
       </div>
 
-      <!-- GALLERY -->
+      <!-- CARD STYLE SLIDER GALLERY -->
       <div class="section">
-
         <h2>Gallery</h2>
 
         <div class="card-slider-wrapper">
-
-          <div class="card-slider-track"
-               [style.transform]="transformStyle">
+          <div class="card-slider-track" [style.transform]="transformStyle">
 
             <div class="gallery-card" *ngFor="let img of gallery">
               <img [src]="img" />
             </div>
 
           </div>
-
         </div>
 
       </div>

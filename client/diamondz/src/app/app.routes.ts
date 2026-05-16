@@ -7,15 +7,31 @@ import { Quote } from './pages/quote/quote';
 import { ColoredPpf } from './sections/colored-ppf/colored-ppf';
 import { MattePpf } from './sections/matte-ppf/matte-ppf';
 import { GlossPpf } from './sections/gloss-ppf/gloss-ppf';
+import { PpfDetails } from './sections/ppf-details/ppf-details';
 
 
 export const routes: Routes = [
   { path: '', component: Home,runGuardsAndResolvers: 'always' },
   { path: 'about', component: About },
-    { path: 'services', component: Services },
+ {
+    path: 'services',
+    component: Services,
 
-  // ✅ SINGLE DYNAMIC PAGE FOR ALL PPF TYPES
-  { path: 'ppf/:slug', component: GlossPpf },
+    children: [
+
+      {
+        path: ':slug',
+        component: PpfDetails
+      },
+
+      {
+        path: '',
+        redirectTo: 'gloss-ppf',
+        pathMatch: 'full'
+      }
+
+    ]
+  },
   { path: 'contact', component: Contact },
   { path: 'quote', component: Quote }
 ];

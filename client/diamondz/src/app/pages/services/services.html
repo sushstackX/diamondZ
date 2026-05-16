@@ -1,28 +1,49 @@
-<!-- IMAGE SECTION (TOP) -->
-<div class="image-section">
-  <div class="image-overlay">
-    <h1>Paint Protection Film (PPF)</h1>
-    <p>Protect your car with premium finish options</p>
+<div class="services-wrapper">
+
+  <!-- HERO IMAGE -->
+  <div class="image-section">
+
+    <div class="image-overlay">
+
+      <h1>Paint Protection Film (PPF)</h1>
+
+      <p>
+        Protect your vehicle with premium gloss,
+        matte, and colored PPF finishes
+      </p>
+
+    </div>
+
   </div>
+
+  <!-- CONTENT -->
+  <div class="content-section">
+
+    <!-- NAVIGATION -->
+    <div class="service-nav">
+
+  <a
+    *ngFor="let s of services"
+
+    [routerLink]="s.slug"
+
+    routerLinkActive="active"
+
+    (click)="selectService(s)"
+  >
+
+    {{ s.name }}
+
+  </a>
+
 </div>
 
-<!-- CONTENT SECTION (BOTTOM) -->
-<div class="content-section">
+<div class="service-content">
 
-  <!-- Navigation -->
-  <div class="service-nav">
-    <a *ngFor="let s of services"
-   [routerLink]="['/ppf', s.slug]">
+  <router-outlet></router-outlet>
 
-  {{ s.name }}
+</div>
 
-</a>
-  </div>
-
-  <!-- Routed Content -->
-  <div class="service-content">
-    <router-outlet></router-outlet>
   </div>
 
 </div>
-<app-footer></app-footer>
