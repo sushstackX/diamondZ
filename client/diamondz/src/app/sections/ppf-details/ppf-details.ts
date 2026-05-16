@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
 import { CommonModule, NgFor } from '@angular/common';
 
 import { PpfService } from '../../services/ppf.service';
+
+import { Subject, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-ppf-details',
@@ -21,15 +23,21 @@ import { PpfService } from '../../services/ppf.service';
   styleUrls: ['./ppf-details.css']
 })
 
-export class PpfDetails implements OnInit {
+export class PpfDetails implements OnInit, OnDestroy {
 
-  slug: string = '';
+  slug = '';
 
   pageData: any;
+
+  loading = true;
 
   currentIndex = 0;
 
   transformStyle = 'translateX(0px)';
+
+  private destroy$ = new Subject<void>();
+
+  private slideInterval: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,19 +46,36 @@ export class PpfDetails implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe(params => {
-
-      this.slug =
-        params.get('slug') || '';
-
-      this.loadPage();
-
+    this.route.data.pipe(
+      takeUntil(this.destroy$),
+      tap(() => {
+        this.loading = true;
+      })
+    ).subscribe({
+      next: (data: any) => {
+        this.pageData = data?.pageData;
+        this.slug = this.route.snapshot.paramMap.get('slug') || '';
+        this.loading = false;
+      },
+      error: () => {
+        this.pageData = undefined;
+        this.loading = false;
+      }
     });
 
-    setInterval(() => {
+    this.slideInterval = setInterval(() => {
       this.nextSlide();
     }, 2500);
 
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
   }
 
   loadPage() {

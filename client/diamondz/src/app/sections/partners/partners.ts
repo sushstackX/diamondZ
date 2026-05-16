@@ -23,7 +23,7 @@ export class Partners {
   },
   {
     name: 'BASF',
-    logo: 'assets/images/basf.png'
+    logo: 'assets/images/lubrizol.png'
   },
   {
     name: 'Covestro',

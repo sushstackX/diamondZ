@@ -19,6 +19,9 @@ import { Vision } from '../../sections/vision/vision';
 import { Partners } from '../../sections/partners/partners';
 import { Footer } from '../../layout/footer/footer';
 import { Services } from '../services/services';
+import { FaqService } from '../../services/faq.service';
+import { ProcessStepService } from '../../services/process-step.service';
+import { BenefitService } from '../../services/benefit.service';
 
 @Component({
   selector: 'app-home',
@@ -49,6 +52,12 @@ export class Home implements OnInit, OnDestroy {
 
   currentIndex = 0;
   private sliderSub!: Subscription;
+
+  constructor(
+    private faqService: FaqService,
+    private processStepService: ProcessStepService,
+    private benefitService: BenefitService
+  ) {}
 
     // ✅ PRODUCTS DATA (dummy backend response)
   products = [
