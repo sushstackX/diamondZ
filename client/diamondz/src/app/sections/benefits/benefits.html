@@ -14,16 +14,24 @@
     <!-- RIGHT GRID -->
     <div class="benefits-grid">
 
-      <div class="benefit-card" *ngFor="let item of benefits">
+      <div
+        class="benefit-card"
+        #benefitCard
+        *ngFor="let item of benefits"
+      >
 
-        <!-- ✅ FIXED ICON -->
         <lucide-icon
           [img]="item.icon"
           class="icon">
         </lucide-icon>
 
-        <p>{{ item.title }}</p>
-        <p class="benefit-description" *ngIf="item.description">{{ item.description }}</p>
+        <div>
+          <p>{{ item.title }}</p>
+
+          <p class="benefit-description" *ngIf="item.description">
+            {{ item.description }}
+          </p>
+        </div>
 
       </div>
 

@@ -1,5 +1,5 @@
 .benefits {
-  background: #f7f7f9;
+  background: var(--silver-gradient);
   padding: 100px 40px;
 }
 
@@ -13,7 +13,7 @@
 
 /* LEFT */
 .benefits-left h2 {
-   font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.2;
@@ -35,18 +35,33 @@
   gap: 25px;
 }
 
-/* CARD */
+/* CARD BASE STATE (hidden before scroll) */
 .benefit-card {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: var(--secondary-glow);
+
+  background: var(--black3);
   padding: 18px;
   border-radius: 10px;
-  transition: none;
 
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition: all 0.6s ease;
 }
 
+/* WHEN VISIBLE ON SCROLL */
+.benefit-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HOVER EFFECT (no color change) */
+.benefit-card:hover {
+  transform: translateY(-6px);
+}
 
 /* ICON */
 .icon {
@@ -57,9 +72,17 @@
 .benefit-card p {
   font-size: 14px;
   font-weight: 500;
+  margin: 0;
 }
 
+/* OPTIONAL: DESCRIPTION */
+.benefit-description {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .benefits-container {
     grid-template-columns: 1fr;
