@@ -1,61 +1,92 @@
 <nav class="navbar">
 
   <!-- LOGO -->
+  <div class="logo" routerLink="/">
+    <img src="../assets/images/logo.png" />
+  </div>
 
-  <div
-    class="logo"
-    routerLink="/"
-  >
+  <!-- MOBILE MENU BUTTON -->
+  <div class="menu-toggle" (click)="toggleMenu()">
 
-    <img
-      src="../assets/images/logo-1.png"
-    
-    />
-
-    <!-- <span>
-      DiamondZ<span class="blue">◆</span>PPF
-    </span> -->
+    <span [class.active]="isMenuOpen"></span>
+    <span [class.active]="isMenuOpen"></span>
+    <span [class.active]="isMenuOpen"></span>
 
   </div>
 
-  <!-- NAV LINKS -->
-  <div class="nav-links">
+  <!-- NAVIGATION -->
+  <div class="nav-wrapper" [class.open]="isMenuOpen">
 
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      Home
-    </a>
+    <div class="nav-links">
 
-    <!-- SERVICES DROPDOWN -->
-    <div class="dropdown">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()">
 
-      <a class="dropdown-toggle" (click)="toggleServices()">
-        Services ▾
+        Home
+
       </a>
 
-      <div class="dropdown-menu" *ngIf="isServicesOpen">
+      <!-- DROPDOWN -->
+      <div class="dropdown">
 
         <a
-          *ngFor="let service of services"
-          [routerLink]="service.route"
-          (click)="closeDropdown()">
+          class="dropdown-toggle"
+          (click)="toggleServices()">
 
-          {{ service.name }}
+          Services ▾
 
         </a>
 
+        <div
+          class="dropdown-menu"
+          *ngIf="isServicesOpen">
+
+          <a
+            *ngFor="let service of services"
+            [routerLink]="service.route"
+            (click)="closeDropdown(); closeMenu()">
+
+            {{ service.name }}
+
+          </a>
+
+        </div>
+
       </div>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+
+        About
+
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+
+        Contact
+
+      </a>
 
     </div>
 
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    <!-- BUTTON -->
+    <button
+      routerLink="/quote"
+      class="quote-btn"
+      (click)="closeMenu()">
 
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      Get A Quote
+
+    </button>
 
   </div>
-
-  <!-- BUTTON -->
-  <button routerLink="/quote" class="quote-btn">
-    Get A Quote
-  </button>
 
 </nav>

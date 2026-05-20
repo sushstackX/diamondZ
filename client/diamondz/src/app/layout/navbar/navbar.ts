@@ -12,6 +12,15 @@ import { NgIf, NgFor } from '@angular/common';
 export class Navbar {
 
   isServicesOpen = false;
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 
   services = [
     { name: 'Gloss PPF', route: '/services/gloss-ppf' },

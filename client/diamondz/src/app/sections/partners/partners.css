@@ -24,9 +24,12 @@
 }
 
 .partners-title {
+  
   font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-  color: #111;
+  font-size: 42px;
+  color: black;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 /* ================= GRID ================= */
