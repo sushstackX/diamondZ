@@ -45,6 +45,7 @@
   gap: 15px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .service-nav a {
@@ -52,9 +53,10 @@
   color: #9ca3af;
   font-size: 14px;
   padding: 10px 14px;
-  border: 1px solid #1e2a3a;
+  border: 1px solid #187be6;
   border-radius: 8px;
   transition: 0.3s;
+  /* background: rgb(97, 100, 100); */
 }
 
 .service-nav a:hover {

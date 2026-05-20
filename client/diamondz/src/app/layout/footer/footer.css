@@ -40,13 +40,10 @@
    LOGO
 ========================================= */
 
-.logo {
-  font-size: 40px;
-  font-weight: 800;
-  margin-bottom: 25px;
-  color: white;
-  line-height: 1.1;
-  letter-spacing: 1px;
+.logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* =========================================
@@ -256,9 +253,11 @@
     gap: 45px;
   }
 
-  .logo {
-    font-size: 32px;
-  }
+.logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
 
   .footer-title,
   .social-section h3 {
@@ -269,9 +268,11 @@
 
 @media (max-width: 480px) {
 
-  .logo {
-    font-size: 28px;
-  }
+.logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
 
   .description,
   .contact-item,

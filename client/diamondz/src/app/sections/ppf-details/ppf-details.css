@@ -91,67 +91,42 @@
   display: grid;
   gap: 60px;
 }
-
 /* =========================
    INTRO CARD
 ========================= */
 
 .intro-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 34px;
-
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
   background: white;
-
-  border: 1px solid rgba(226,232,240,0.9);
-
   border-radius: 30px;
 
-  overflow: hidden;
-
-  padding: 20px;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  padding: 10px;
 }
 
-.intro-card:hover {
-  transform: translateY(-4px);
+/* TOP SECTION */
 
-  box-shadow:
-    0 18px 40px rgba(66,165,245,0.10);
+.intro-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: center;
 }
 
 /* IMAGE */
 
 .intro-card img {
   width: 100%;
-  height: 100%;
-  min-height: 500px;
-
-  object-fit: cover;
-
   border-radius: 24px;
-
-  transition:
-    transform 0.5s ease,
-    filter 0.5s ease;
+  object-fit: cover;
 }
 
-.intro-card:hover img {
-  transform: scale(1.03);
-}
-
-/* =========================
-   INTRO TEXT
-========================= */
+/* TEXT */
 
 .intro-text {
-  padding-right: 10px;
+  padding: 10px;
 }
 
 .intro-text h2 {
@@ -159,14 +134,13 @@
   margin-bottom: 18px;
 
   font-family: 'Cormorant Garamond', serif;
-
-  color: var(--silver-medium);
+  color: var(--black-dark);
 }
 
 .intro-text p {
-  color: var(--silver-dark);
+  color: var(--black-dark);
   line-height: 1.9;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* =========================
@@ -174,42 +148,18 @@
 ========================= */
 
 .intro-features {
-  margin-top: 32px;
-
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-/* FEATURE CARD */
+/* FEATURE */
 
 .feature-row {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-
-  padding: 16px 18px;
-
-  border-radius: 18px;
-
-  background: #f8fbff;
-
-  border: 1px solid rgba(226, 232, 240, 0.9);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.feature-row:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(66,165,245,0.35);
-
-  box-shadow:
-    0 12px 28px rgba(66,165,245,0.10);
-
-  background: white;
+  gap: 12px;
+  padding: 3px 0;
 }
 
 /* ICON */
@@ -219,42 +169,59 @@
   width: 34px;
   height: 34px;
 
-  border-radius: 50%;
-
-  display: flex;
   align-items: center;
   justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary-light)
-    );
-
-  color: white;
-
-  font-size: 12px;
-  font-weight: 700;
 }
 
-/* FEATURE TEXT */
+.icon lucide-icon {
+  width: 18px;
+  height: 18px;
+
+  color: var(--secondary-glow);
+}
+
+/* TEXT */
 
 .feature-row h4 {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+
   color: var(--silver-medium);
-  font-size: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .feature-row p {
-  color: var(--silver-dark);
-  line-height: 1.6;
-  font-size: 13px;
+  color: var(--black-dark);
+
+  line-height: 1.7;
+
+  font-size: 14px;
 }
 
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+
+  .intro-top {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-features {
+    grid-template-columns: 1fr;
+  }
+}
 /* =========================
    SECTION TITLE
 ========================= */
+
+.section {
+
+  margin-bottom: 10px;
+padding: 10px 40px;
+
+}
+
 
 .section h2 {
   font-size: 42px;
@@ -287,7 +254,7 @@
 
   background: white;
 
-  border: 1px solid rgba(226,232,240,0.9);
+  border: 1px solid rgba(1, 13, 29, 0.9);
 
   transition:
     transform 0.35s ease,
@@ -306,12 +273,7 @@
 .plan-header {
   padding: 26px;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary-light)
-    );
+  background: var(--black3);
 
   color: white;
 }
@@ -342,7 +304,7 @@
   align-items: flex-start;
   gap: 12px;
 
-  color: var(--silver-dark);
+  color: var(--black-dark);
 
   font-size: 14px;
   line-height: 1.7;
@@ -356,8 +318,7 @@
   height: 26px;
 
   border-radius: 50%;
-
-  background: var(--primary-light);
+  background: var(--black3);
 
   color: white;
 

@@ -15,7 +15,6 @@ interface Partner {
 })
 export class Partners {
 
-  // ✅ Dummy data (later from API)
   partners: Partner[] = [
 {
     name: 'Lubrizol',
