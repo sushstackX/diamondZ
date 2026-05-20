@@ -1,13 +1,10 @@
 <!-- HERO SECTION -->
 <section class="about-hero">
 
-  <!-- OVERLAY -->
   <div class="hero-overlay"></div>
 
-  <!-- GLOW -->
   <div class="hero-glow"></div>
 
-  <!-- CONTENT -->
   <div class="hero-content">
 
     <p class="hero-subtitle">
@@ -29,13 +26,12 @@
 
 </section>
 
-
 <!-- INFO SECTION -->
 <section class="about-info-section">
 
   <div class="about-grid">
 
-    <!-- LEFT CONTENT -->
+    <!-- LEFT -->
     <div>
 
       <p class="section-subtitle">
@@ -80,12 +76,11 @@
     <div class="image-wrapper">
 
       <img
-        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
+        src="../assets/images/hero2.jpg"
         alt=""
         class="about-image"
       >
 
-      <!-- FLOATING CARD -->
       <div class="floating-card">
 
         <h3>10+</h3>
@@ -103,13 +98,11 @@
 
 </section>
 
-<!-- PARALLAX IMAGE SECTION -->
+<!-- PARALLAX -->
 <section class="parallax-break">
 
-  <!-- OVERLAY -->
   <div class="parallax-overlay"></div>
 
-  <!-- CONTENT -->
   <div class="parallax-content">
 
     <p>
@@ -130,26 +123,51 @@
 
   <div class="why-container">
 
+    <!-- HEADER -->
     <div class="why-header">
-      <p class="section-subtitle">Why Choose Diamondz PPF?</p>
-      <h2 class="why-title">Excellence Built Into Every Detail</h2>
+
+      <p class="section-subtitle">
+        Why Choose Diamondz PPF
+      </p>
+
+      <h2 class="why-title">
+        Excellence Built Into Every Detail
+      </h2>
+
     </div>
 
+    <!-- GRID -->
     <div class="why-grid">
 
-      <div class="why-card" *ngFor="let item of whyChooseUs">
+      <!-- CARD -->
+      <div
+        class="why-card"
+        *ngFor="let item of whyChooseUs"
+      >
 
-        <div class="why-top">
+        <!-- IMAGE -->
+        <div class="why-image-wrapper">
 
-          <div class="why-number">
-            {{ item.number }}
-          </div>
-
-          <h3>{{ item.title }}</h3>
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+            class="why-image"
+          >
 
         </div>
 
-        <p>{{ item.description }}</p>
+        <!-- CONTENT -->
+        <div class="why-content">
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p>
+            {{ item.description }}
+          </p>
+
+        </div>
 
       </div>
 
@@ -158,6 +176,5 @@
   </div>
 
 </section>
-
 
 <app-footer></app-footer>

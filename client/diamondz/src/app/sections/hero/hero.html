@@ -1,7 +1,25 @@
+
+
 <section class="hero">
 
-  <!-- BACKGROUND SLIDER -->
   <div class="hero-bg">
+
+    <img
+      *ngFor="let img of images; let i = index"
+      [src]="img"
+      class="slide-image"
+      [class.active]="i === currentIndex"
+    />
+
+  </div>
+
+</section>
+
+
+<!-- <section class="hero"> -->
+
+  <!-- BACKGROUND SLIDER -->
+  <!-- <div class="hero-bg">
 
     <div
       *ngFor="let img of images; let i = index"
@@ -10,7 +28,7 @@
       [style.background-image]="'url(' + img + ')'"
     ></div>
 
-  </div>
+  </div> -->
 
   <!-- CONTENT -->
 
@@ -43,4 +61,4 @@
 
   </div> -->
 
-</section>
+<!-- </section> -->

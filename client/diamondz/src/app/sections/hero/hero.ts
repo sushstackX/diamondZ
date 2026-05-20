@@ -11,19 +11,24 @@ import { interval, Subscription } from 'rxjs';
 })
 export class Hero implements OnInit, OnDestroy {
 
-  images: string[] = [
-    'assets/images/banner3.png'
+  images = [
+    'assets/images/banner1a.png',
+    'assets/images/banner2a.png',
+    'assets/images/banner3a.png'
   ];
 
   currentIndex = 0;
+
   private sub!: Subscription;
 
   ngOnInit(): void {
 
-    this.sub = interval(5000).subscribe(() => {
+    this.sub = interval(1000).subscribe(() => {
 
       this.currentIndex =
         (this.currentIndex + 1) % this.images.length;
+
+      console.log(this.currentIndex);
 
     });
 
@@ -32,4 +37,5 @@ export class Hero implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
+
 }
