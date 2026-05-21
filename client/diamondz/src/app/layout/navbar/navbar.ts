@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
+import { Quote } from '../../pages/quote/quote';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterModule, NgIf, NgFor],
+  imports: [RouterLink, RouterModule, NgIf, NgFor,Quote],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
@@ -13,7 +14,7 @@ export class Navbar {
 
   isServicesOpen = false;
   isMenuOpen = false;
-
+  showQuotePopup = false;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
@@ -34,5 +35,14 @@ export class Navbar {
 
   closeDropdown() {
     this.isServicesOpen = false;
+  }
+
+  openQuotePopup() {
+  this.showQuotePopup = true;
+  this.closeMenu();
+  }
+
+  closeQuotePopup() {
+    this.showQuotePopup = false;
   }
 }

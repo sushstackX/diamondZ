@@ -29,27 +29,21 @@ export class About {
 
     {
       image: '../assets/images/why3.jpg',
-      title: 'Trusted Quality & Authentic Products',
+      title: 'Trusted Quality & Authentic Products From Germany',
       description:
         'We believe in transparency and genuine materials only. Every film we install is sourced from globally recognized manufacturers with proven automotive-grade standards and consistent quality control.'
     },
 
     {
-      image: '../assets/images/why1.jpg',
+      image: '../assets/images/why4.png',
       title: 'Complete Vehicle Protection Solutions',
       description:
         'From Paint Protection Films and matte finishes to gloss enhancement, roof wraps, pillar protection, and interior protection solutions — we provide complete customization and protection packages tailored to your vehicle.'
     },
 
-    {
-      image: '../assets/images/why3.jpg',
-      title: 'Precision Engineered Performance',
-      description:
-        'Developed using advanced coating and laminating technologies, our automotive films deliver exceptional surface smoothness, clarity, flexibility, and long-lasting protective performance.'
-    },
 
     {
-      image: '../assets/images/why3.jpg',
+      image: '../assets/images/why5.png',
       title: 'Reliable Worldwide Distribution',
       description:
         'With efficient logistics management and international supply capabilities, we ensure smooth and timely product delivery for customers and partners across global automotive markets.'

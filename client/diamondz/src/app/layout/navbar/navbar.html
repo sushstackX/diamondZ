@@ -79,14 +79,43 @@
 
     <!-- BUTTON -->
     <button
-      routerLink="/quote"
       class="quote-btn"
-      (click)="closeMenu()">
+      (click)="openQuotePopup()">
 
       Get A Quote
 
     </button>
-
   </div>
 
 </nav>
+
+<!-- =========================
+     QUOTE POPUP
+========================= -->
+
+<div
+  class="quote-popup-overlay"
+  *ngIf="showQuotePopup"
+  (click)="closeQuotePopup()">
+
+  <div
+    class="quote-popup-content"
+    (click)="$event.stopPropagation()">
+
+    <!-- CLOSE BUTTON -->
+
+    <button
+      class="close-popup"
+      (click)="closeQuotePopup()">
+
+      ✕
+
+    </button>
+
+    <!-- QUOTE COMPONENT -->
+
+    <app-quote></app-quote>
+
+  </div>
+
+</div>

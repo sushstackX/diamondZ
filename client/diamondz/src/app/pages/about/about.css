@@ -470,14 +470,18 @@
   color: var(--white);
 
   max-width: 900px;
-}/* =========================================
+}
+/* =========================================
+   WHY SECTION
+========================================= */
+/* =========================================
    WHY SECTION
 ========================================= */
 
 .why-section {
   background: #f3f4f6;
-  padding: 10px 20px;
- 
+  padding: 100px 20px;
+
   position: relative;
   overflow: hidden;
 }
@@ -486,7 +490,7 @@
 
 .why-container {
   max-width: 1280px;
-   padding : 30px;
+  margin: auto;
 }
 
 /* HEADER */
@@ -506,36 +510,61 @@
   margin-top: 10px;
 }
 
-/* GRID */
+/* =========================================
+   GRID
+========================================= */
 
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
 
-  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 28px;
+
+  max-width: 1250px;
+  margin: auto;
 }
 
-/* CARD */
+/* =========================================
+   CARD
+========================================= */
 
 .why-card {
+  width: calc(33.333% - 20px);
+  min-height: 620px;
+
   background: #ffffff;
 
   border: 1px solid #e5e7eb;
 
   overflow: hidden;
 
-
   display: flex;
   flex-direction: column;
 
-  height: 100%;
-
   position: relative;
+
+  transition: 0.4s ease;
 }
 
+/* SECOND ROW CENTER */
 
+.why-card:nth-child(4),
+.why-card:nth-child(5) {
+  width: calc(33.333% - 20px);
+}
 
-/* IMAGE WRAPPER */
+/* HOVER */
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
 
 .why-image-wrapper {
   width: 100%;
@@ -544,6 +573,8 @@
   overflow: hidden;
 
   background: #f8fafc;
+
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
@@ -559,21 +590,27 @@
   height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   display: block;
 
- 
+  transition: transform 0.5s ease;
 }
 
-/* HOVER IMAGE */
+/* IMAGE HOVER */
 
+.why-card:hover .why-image {
+  transform: scale(1.05);
+}
 
-/* CONTENT */
+/* =========================================
+   CONTENT
+========================================= */
 
 .why-content {
   padding: 30px;
+
+  background: #cbcccc;
 
   flex: 1;
 
@@ -592,6 +629,8 @@
   color: var(--black-dark);
 
   margin-bottom: 20px;
+
+  min-height: 72px;
 }
 
 /* DESCRIPTION */
@@ -600,9 +639,11 @@
   font-size: 16px;
   line-height: 2;
 
-  color: #4b5563;
+  color: #030911;
 
   margin: 0;
+
+  flex: 1;
 }
 
 /* =========================================
@@ -611,8 +652,11 @@
 
 @media (max-width: 1100px) {
 
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-card,
+  .why-card:nth-child(4),
+  .why-card:nth-child(5) {
+    width: calc(50% - 14px);
+    min-height: 600px;
   }
 
 }
@@ -624,7 +668,14 @@
   }
 
   .why-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .why-card,
+  .why-card:nth-child(4),
+  .why-card:nth-child(5) {
+    width: 100%;
+    min-height: auto;
   }
 
   .why-title {
@@ -641,6 +692,7 @@
 
   .why-card h3 {
     font-size: 22px;
+    min-height: auto;
   }
 
   .why-card p {

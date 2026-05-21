@@ -38,11 +38,8 @@
       <div class="info-list mt-8">
 
         <p><i class="fa-solid fa-car-side"></i> Authorized Dealer Program</p>
-
         <p><i class="fa-solid fa-boxes-stacked"></i> Wholesale & Bulk Supply</p>
-
         <p><i class="fa-solid fa-shield-halved"></i> Certified Installer Network</p>
-
         <p><i class="fa-solid fa-globe"></i> Pan-India Distribution</p>
 
       </div>
@@ -50,9 +47,7 @@
       <div class="contact-box mt-10">
 
         <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-
         <p><i class="fa-solid fa-envelope"></i> sales@diamondzppf.com</p>
-
         <p><i class="fa-solid fa-location-dot"></i> Bangalore, India</p>
 
       </div>
@@ -70,8 +65,8 @@
 
         <input type="text" formControlName="company" placeholder="Company Name" />
 
-        <select formControlName="inquiryType">
-          <option value="">Inquiry Type</option>
+        <select formControlName="enquiryType">
+          <option value="">Enquiry Type</option>
           <option>Dealer Partnership</option>
           <option>Installer Program</option>
           <option>Bulk Order</option>
@@ -81,15 +76,17 @@
         <textarea rows="5" formControlName="message"
           placeholder="Describe your requirement..."></textarea>
 
-        <button class="btn-primary" type="submit">
-          <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+        <button
+          class="btn-primary"
+          type="submit"
+          [disabled]="isSubmitting">
+
+          {{ isSubmitting ? 'Submitting...' : 'Submit Enquiry' }}
+
         </button>
 
       </form>
 
-      <!-- MESSAGES -->
-      <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
-      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
 
     </div>
 

@@ -1,7 +1,7 @@
 /* IMAGE SECTION */
 .image-section {
   height: 60vh;
-  background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2083&auto=format&fit=crop');
+  background-image: url('/assets/images/ppfdetail.png');
   background-size: cover;
   background-position: center;
   position: relative;

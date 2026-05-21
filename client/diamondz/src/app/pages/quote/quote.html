@@ -1,1 +1,78 @@
-<p>quote works!</p>
+<div class="quote-wrapper">
+
+  <div class="quote-container">
+
+    <h1>Request a Quote</h1>
+
+    <p>
+      Get premium PPF solutions for your business.
+    </p>
+
+    <form
+      [formGroup]="quoteForm"
+      (ngSubmit)="submitQuote()">
+
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Full Name" />
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Business Email" />
+
+      <input
+        type="text"
+        formControlName="company"
+        placeholder="Company Name" />
+
+      <select formControlName="enquiryType">
+
+        <option value="">
+          Enquiry Type
+        </option>
+
+        <option>
+          Dealer Partnership
+        </option>
+
+        <option>
+          Installer Program
+        </option>
+
+        <option>
+          Bulk Order
+        </option>
+
+        <option>
+          Franchise
+        </option>
+
+      </select>
+
+      <textarea
+        rows="5"
+        formControlName="message"
+        placeholder="Describe your requirement...">
+      </textarea>
+
+      <button
+        type="submit"
+        class="btn-primary"
+        [disabled]="isSubmitting">
+
+        {{
+          isSubmitting
+          ? 'Submitting...'
+          : 'Request Quote'
+        }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
