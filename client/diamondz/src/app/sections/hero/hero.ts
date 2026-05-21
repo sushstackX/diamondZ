@@ -1,6 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectorRef
+} from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { interval, Subscription } from 'rxjs';
+import { title } from 'process';
 
 @Component({
   selector: 'app-hero',
@@ -11,31 +17,53 @@ import { interval, Subscription } from 'rxjs';
 })
 export class Hero implements OnInit, OnDestroy {
 
-  images = [
-    'assets/images/banner1a.png',
-    'assets/images/banner2a.png',
-    'assets/images/banner3a.png'
-  ];
+  constructor(private cdr: ChangeDetectorRef) {}
+
+slides = [
+  {
+    image: 'assets/images/banner1a.png',
+    top: 'STYLE. PROTECTION. PERFORMANCE.',
+    title1: 'WRAP',
+    white: 'PROTECT',
+    title2: 'FINISH',
+    subtitle: 'CHANGE THE LOOK PTORECT WHAT MATTERS',
+    desc: 'Upgrade your vehicle instantly with premium film.'
+  },
+
+  {
+    image: 'assets/images/banner2a.png',
+    top: 'MATTE FINISH. PREMIUM LOOK.',
+    title1: 'MATTE',
+    white: 'TIMELESS',
+    title2: 'PROTECTION',
+    subtitle: 'PREMIUM AUTOMOTIVE FILM',
+    desc: 'Matte PPF gives a bold and sophisticated finish.'
+  },
+    {
+    image: 'assets/images/banner3a.png',
+    top: 'BOLD COLORS. ULTIMATE PROTECTION.',
+    title1: 'COLOUR',
+    white: 'PPF',
+    title2: '',
+    subtitle: 'EXPRESS YOUR STYLE',
+    desc: 'Premium Paint Protection Film that changes the look while protecting what matters most.'
+  },
+  
+];
 
   currentIndex = 0;
-
-  private sub!: Subscription;
+  intervalId: any;
 
   ngOnInit(): void {
-
-    this.sub = interval(1000).subscribe(() => {
-
+    this.intervalId = setInterval(() => {
       this.currentIndex =
-        (this.currentIndex + 1) % this.images.length;
+        (this.currentIndex + 1) % this.slides.length;
 
-      console.log(this.currentIndex);
-
-    });
-
+      this.cdr.detectChanges();
+    }, 5000);
   }
 
   ngOnDestroy(): void {
-    this.sub?.unsubscribe();
+    clearInterval(this.intervalId);
   }
-
 }

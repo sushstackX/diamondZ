@@ -1,6 +1,6 @@
 /* SECTION */
 .ppf-process {
-  background: var(--black2);
+  background: var(--black3);
   padding: 100px 40px;
   text-align: center;
 }
@@ -48,7 +48,7 @@
 
   background: var(--black3);
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid #3f3d3d;
 
   position: relative;
   overflow: hidden;

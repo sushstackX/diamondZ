@@ -1,6 +1,6 @@
 /* SECTION */
 .faq {
-  background: linear-gradient(180deg, var(--black), var(--black2));
+  background: var(--black3);;
   padding: 10px 20px;
 
 }

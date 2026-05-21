@@ -14,8 +14,8 @@ export class Company implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   slides = [
-    { image: 'assets/images/ppf2.jpg', label: 'Gloss Finish' },
-    { image: 'assets/images/ppf3.jpg', label: 'Matte Finish' }
+    { image: 'assets/images/ppf_sample2.png', label: 'Gloss Finish' },
+    // { image: 'assets/images/ppf3.jpg', label: 'Matte Finish' }
   ];
 
   currentIndex = 0;
@@ -26,7 +26,7 @@ export class Company implements OnInit, OnDestroy {
       this.currentIndex =
         (this.currentIndex + 1) % this.slides.length;
 
-      this.cdr.detectChanges(); // 🔥 important
+      this.cdr.detectChanges(); 
     }, 3000);
   }
 

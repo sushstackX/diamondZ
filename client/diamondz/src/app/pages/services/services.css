@@ -35,7 +35,7 @@
 
 /* CONTENT SECTION */
 .content-section {
-  background: #0f172a;
+  background: var(--black3);
   padding: 30px;
 }
 

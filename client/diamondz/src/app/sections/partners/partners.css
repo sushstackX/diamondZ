@@ -1,3 +1,4 @@
+
 /* ================= SECTION ================= */
 .partners {
   background: #f4f7fb;
@@ -43,6 +44,7 @@
 
 /* ================= CARD ================= */
 .partner-card {
+
   height: 80px;
 
   display: flex;
@@ -60,6 +62,5 @@
   max-height: 40px;
   object-fit: contain;
 
-  /* 🔥 important for visibility */
   display: block;
 }

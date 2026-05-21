@@ -21,7 +21,13 @@
   --black3: #1a1a26; */
 --black: linear-gradient(135deg, #070b14 0%, #0f172a 50%, #111827 100%);
 --black2: linear-gradient(135deg, #0b1120 0%, #111827 50%, #1e293b 100%);
---black3: linear-gradient(135deg, #111827 0%, #1e293b 50%, #334155 100%);
+--black3: linear-gradient(
+    180deg,
+    #050816 0%,
+    #0d1633 45%,
+    #050816 100%
+  );
+--black4: linear-gradient(135deg, #111827 0%, #1e293b 50%, #334155 100%);
 
   /* PRIMARY (BLUE SYSTEM) */
   --primary: #1565c0;
