@@ -28,7 +28,7 @@ export class About {
     },
 
     {
-      image: '../assets/images/why3.jpg',
+      image: '../assets/images/why3.png',
       title: 'Trusted Quality & Authentic Products From Germany',
       description:
         'We believe in transparency and genuine materials only. Every film we install is sourced from globally recognized manufacturers with proven automotive-grade standards and consistent quality control.'
