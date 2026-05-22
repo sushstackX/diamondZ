@@ -67,10 +67,59 @@
         </div>
 
       </div>
+          
+      <!-- =========================
+          GALLERY SECTION
+      ========================= -->
+
+      <div
+        class="gallery-section"
+        *ngIf="pageData.gallery?.length"
+      >
+
+        <div class="gallery-header">
+
+          <h2>
+            Gallery Showcase
+          </h2>
+
+          <p>
+            Premium paint protection film finishes
+          </p>
+
+        </div>
+
+        <!-- SLIDER -->
+
+        <div class="gallery-slider">
+
+          <div class="gallery-track">
+
+            <div
+              class="gallery-card"
+              *ngFor="let image of pageData.gallery"
+            >
+
+              <img
+                [src]="image"
+                alt="Gallery Image"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
+
+
   </div>
+
+
 
 </ng-container>
 

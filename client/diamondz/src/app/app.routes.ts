@@ -7,6 +7,7 @@ import { Quote } from './pages/quote/quote';
 
 import { PpfDetails } from './sections/ppf-details/ppf-details';
 import { PpfDetailsResolver } from './sections/ppf-details/ppf-details.resolver';
+import { Admin } from './pages/admin/admin';
 
 
 export const routes: Routes = [
@@ -36,5 +37,6 @@ export const routes: Routes = [
     ]
   },
   { path: 'contact', component: Contact },
-  { path: 'quote', component: Quote }
+  { path: 'quote', component: Quote },
+  // { path: 'admin', component: Admin }
 ];

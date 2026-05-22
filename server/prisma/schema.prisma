@@ -48,7 +48,7 @@ model PpfPage {
   uniqueCharacteristics Json?
 
   warranties            Json
-  gallery               Json
+  gallery               String[]
 
   isActive              Boolean  @default(true)
 

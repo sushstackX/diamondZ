@@ -6,20 +6,17 @@
   width: 100%;
   min-height: 100vh;
   padding: 70px 24px;
-
   background:
     radial-gradient(
       circle at top left,
       rgba(66, 165, 245, 0.08),
       transparent 24%
     ),
-
     linear-gradient(
       180deg,
       #ffffff 0%,
       #f8fbff 100%
     );
-
   overflow: hidden;
 }
 
@@ -30,20 +27,13 @@
 .gloss-container {
   position: relative;
   z-index: 2;
-
   max-width: 1220px;
   margin: auto;
-
   background: white;
-
   border-radius: 34px;
-
   padding: 46px;
-
   border: 1px solid rgba(226, 232, 240, 0.9);
-
-  box-shadow:
-    0 20px 50px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 
 /* =========================
@@ -59,26 +49,23 @@
   font-size: 58px;
   line-height: 1.1;
   margin-bottom: 20px;
-
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-
   background: linear-gradient(
     120deg,
     var(--primary),
     var(--primary-light)
   );
-
   -webkit-background-clip: text;
-  color: transparent;
+
+    color: var(--secondary-glow);
+    font-weight: bold;
 }
 
 .header p {
   max-width: 760px;
   margin: auto;
-
   color: var(--silver-dark);
-
   font-size: 15px;
   line-height: 1.9;
 }
@@ -91,6 +78,7 @@
   display: grid;
   gap: 60px;
 }
+
 /* =========================
    INTRO CARD
 ========================= */
@@ -99,10 +87,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-
   background: white;
   border-radius: 30px;
-
   padding: 10px;
 }
 
@@ -132,7 +118,6 @@
 .intro-text h2 {
   font-size: 38px;
   margin-bottom: 18px;
-
   font-family: 'Cormorant Garamond', serif;
   color: var(--black-dark);
 }
@@ -168,7 +153,6 @@
   min-width: 34px;
   width: 34px;
   height: 34px;
-
   align-items: center;
   justify-content: center;
 }
@@ -176,7 +160,6 @@
 .icon lucide-icon {
   width: 18px;
   height: 18px;
-
   color: var(--secondary-glow);
 }
 
@@ -184,18 +167,14 @@
 
 .feature-row h4 {
   margin-bottom: 6px;
-
   color: var(--silver-medium);
-
   font-size: 16px;
   font-weight: bold;
 }
 
 .feature-row p {
   color: var(--black-dark);
-
   line-height: 1.7;
-
   font-size: 14px;
 }
 
@@ -211,24 +190,20 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* =========================
    SECTION TITLE
 ========================= */
 
 .section {
-
   margin-bottom: 10px;
-padding: 10px 40px;
-
+  padding: 10px 40px;
 }
-
 
 .section h2 {
   font-size: 42px;
   margin-bottom: 28px;
-
   font-family: 'Cormorant Garamond', serif;
-
   color: var(--silver-medium);
 }
 
@@ -238,10 +213,7 @@ padding: 10px 40px;
 
 .warranty-plans {
   display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(270px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 24px;
 }
 
@@ -249,13 +221,9 @@ padding: 10px 40px;
 
 .plan-card {
   overflow: hidden;
-
   border-radius: 26px;
-
   background: white;
-
   border: 1px solid rgba(1, 13, 29, 0.9);
-
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -263,18 +231,14 @@ padding: 10px 40px;
 
 .plan-card:hover {
   transform: translateY(-5px);
-
-  box-shadow:
-    0 20px 40px rgba(66,165,245,0.12);
+  box-shadow: 0 20px 40px rgba(66,165,245,0.12);
 }
 
 /* HEADER */
 
 .plan-header {
   padding: 26px;
-
   background: var(--black3);
-
   color: white;
 }
 
@@ -292,7 +256,6 @@ padding: 10px 40px;
 
 .plan-body {
   padding: 24px;
-
   display: grid;
   gap: 16px;
 }
@@ -303,9 +266,7 @@ padding: 10px 40px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-
   color: var(--black-dark);
-
   font-size: 14px;
   line-height: 1.7;
 }
@@ -316,57 +277,14 @@ padding: 10px 40px;
   min-width: 26px;
   width: 26px;
   height: 26px;
-
   border-radius: 50%;
   background: var(--black3);
-
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 11px;
   font-weight: 700;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(260px, 1fr));
-
-  gap: 20px;
-}
-
-/* IMAGE */
-
-.gallery img {
-  width: 100%;
-  height: 260px;
-
-  object-fit: cover;
-
-  border-radius: 24px;
-
-  border: 1px solid rgba(226,232,240,0.9);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.gallery img:hover {
-  transform:
-    translateY(-4px)
-    scale(1.02);
-
-  box-shadow:
-    0 20px 40px rgba(66,165,245,0.12);
 }
 
 /* =========================
@@ -375,7 +293,6 @@ padding: 10px 40px;
 
 .loading-state .gloss-container {
   min-height: 240px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,5 +356,165 @@ padding: 10px 40px;
 
   .gallery img {
     height: 220px;
+  }
+}
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery-section {
+  margin-top: 90px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-header h2 {
+     font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    color: var(--secondary-glow);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.gallery-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.gallery-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================
+   TRACK
+========================================= */
+
+.gallery-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: slideGallery 60s linear infinite;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.gallery-card {
+  flex: 0 0 auto;
+  width: 360px;
+  height: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.9s ease;
+}
+
+/* HOVER */
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes slideGallery {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+  .gallery-card {
+    width: 300px;
+    height: 220px;
+  }
+
+  .gallery-header h2 {
+    font-size: 34px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .gallery-section {
+    margin-top: 60px;
+  }
+
+  .gallery-header {
+    margin-bottom: 30px;
+  }
+
+  .gallery-header h2 {
+    font-size: 28px;
+  }
+
+  .gallery-header p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .gallery-track {
+    gap: 16px;
+  }
+
+  .gallery-card {
+    width: 240px;
+    height: 180px;
+    border-radius: 18px;
   }
 }

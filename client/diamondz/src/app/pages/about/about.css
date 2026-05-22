@@ -377,11 +377,9 @@
 
   .floating-card {
     position: relative;
-
-    left: 0;
     bottom: 0;
-
-    margin-top: 30px;
+    width: 100%;
+    margin-top: -30px;
   }
 
 }

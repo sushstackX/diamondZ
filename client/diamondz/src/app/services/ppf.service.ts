@@ -8,8 +8,8 @@ import { catchError, forkJoin, Observable, of, shareReplay } from 'rxjs';
 
 export class PpfService {
 
-  api =
-    'http://localhost:5000/api/ppf-pages';
+  api = 'http://localhost:5000/api/ppf-pages';
+  uploadUrl = 'http://localhost:5000/api/uploads';
 
   private slugCache = new Map<string, Observable<any>>();
   private allPages$?: Observable<any>;
@@ -45,6 +45,16 @@ export class PpfService {
     return this.allPages$;
   }
 
+  updatePage(slug: string, payload: any): Observable<any> {
+    return this.http.patch(`${this.api}/${slug}`, payload);
+  }
+
+  uploadImage(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post(this.uploadUrl, formData);
+  }
+
   prefetchSlugs(slugs: string[]): Observable<any> {
     return forkJoin(
       slugs.map(slug =>
@@ -53,6 +63,18 @@ export class PpfService {
         )
       )
     );
+  }
+
+  clearCache(): void {
+    this.allPages$ = undefined;
+    this.slugCache.clear();
+  }
+
+  uploadGallery(pageId: string, files: FileList | File[]): Observable<any> {
+    const formData = new FormData();
+    const fileArray = Array.isArray(files) ? files : Array.from(files);
+    fileArray.forEach(file => formData.append('images', file));
+    return this.http.post(`${this.api}/${pageId}/gallery`, formData);
   }
 
 }
