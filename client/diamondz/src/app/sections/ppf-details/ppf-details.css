@@ -116,8 +116,9 @@
 }
 
 .intro-text h2 {
-  font-size: 38px;
-  margin-bottom: 18px;
+  font-size: 60px;
+  font-weight: bold;
+  /* margin-top: px; */
   font-family: 'Cormorant Garamond', serif;
   color: var(--black-dark);
 }
@@ -388,11 +389,11 @@
 }
 
 .gallery-header p {
-  font-size: 16px;
-  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  color: rgba(1, 12, 41, 0.7);
   max-width: 600px;
   margin: auto;
-  line-height: 1.7;
+  line-height: 1.1;
 }
 
 /* =========================================
