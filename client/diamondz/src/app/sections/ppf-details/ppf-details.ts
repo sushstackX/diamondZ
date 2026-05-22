@@ -28,17 +28,11 @@ import {
 export class PpfDetails implements OnInit, OnDestroy {
 
   slug = '';
-
   pageData: any;
-
   loading = true;
-
   currentIndex = 0;
-
   transformStyle = 'translateX(0px)';
-
   chevronIcon = ChevronsRight;
-
   private destroy$ = new Subject<void>();
 
   private slideInterval: any;

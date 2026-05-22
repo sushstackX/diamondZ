@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 import Swal from 'sweetalert2';
 
@@ -36,7 +36,8 @@ export class Contact {
 
   constructor(
     private fb: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    @Inject(PLATFORM_ID) private platformId: object
   ) {
 
     this.contactForm = this.fb.group({
@@ -55,6 +56,13 @@ export class Contact {
     });
   }
 
+  ngOnInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+
+  }
   submitForm() {
 
     // VALIDATION
@@ -121,4 +129,6 @@ export class Contact {
       behavior: 'smooth'
     });
   }
+
+
 }

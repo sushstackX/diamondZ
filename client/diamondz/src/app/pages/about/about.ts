@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Footer } from '../../layout/footer/footer';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -11,6 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class About {
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+   ngOnInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+
+  }
   whyChooseUs = [
 
     {
@@ -50,5 +59,7 @@ export class About {
     },
 
   ];
+
+
 
 }

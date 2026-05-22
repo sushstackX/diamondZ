@@ -16,35 +16,42 @@
   <!-- CONTENT -->
   <div class="hero-content">
 
-    <p class="hero-top">
-      {{ slides[currentIndex].top }}
-    </p>
+    <div
+      class="hero-text"
+      [@textAnimation]="currentIndex"
+    >
 
-    <div class="hero-line"></div>
+      <p class="hero-top">
+        {{ slides[currentIndex].top }}
+      </p>
 
-    <h1 class="hero-title">
+      <div class="hero-line"></div>
 
-      <span class="title1">
-        {{ slides[currentIndex]?.title1 }}
-      </span>
+      <h1 class="hero-title">
 
-      <strong class="white">
-        {{ slides[currentIndex]?.white }}
-      </strong>
+        <span class="title1">
+          {{ slides[currentIndex]?.title1 }}
+        </span>
 
-      <span class="title2">
-        {{ slides[currentIndex]?.title2 }}
-      </span>
+        <strong class="white">
+          {{ slides[currentIndex]?.white }}
+        </strong>
 
-    </h1>
+        <span class="title2">
+          {{ slides[currentIndex]?.title2 }}
+        </span>
 
-    <h2 class="hero-subtitle">
-      {{ slides[currentIndex].subtitle }}
-    </h2>
+      </h1>
 
-    <p class="hero-desc">
-      {{ slides[currentIndex].desc }}
-    </p>
+      <h2 class="hero-subtitle">
+        {{ slides[currentIndex].subtitle }}
+      </h2>
+
+      <p class="hero-desc">
+        {{ slides[currentIndex].desc }}
+      </p>
+
+    </div>
 
   </div>
 
