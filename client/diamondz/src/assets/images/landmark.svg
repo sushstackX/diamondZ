@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Roof -->
+  <path d="M3 9L12 4L21 9" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- Columns -->
+  <path d="M6 10V17" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M10 10V17" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M14 10V17" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+  <path d="M18 10V17" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+
+  <!-- Base -->
+  <path d="M4 20H20" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+
+  <path d="M3 17H21" stroke="#0B4EA2" stroke-width="2" stroke-linecap="round"></path>
+
+</svg>

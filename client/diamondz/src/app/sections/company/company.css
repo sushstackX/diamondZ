@@ -16,7 +16,8 @@
 /* LEFT */
 .company-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+    font-size: 64px;
+  font-weight: 400;
   color: var(--diamond-bright);
   margin-bottom: 20px;
 }

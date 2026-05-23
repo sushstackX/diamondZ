@@ -13,9 +13,9 @@
 
 /* LEFT */
 .benefits-left h2 {
+  font-size: 64px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 50px;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--black-dark);
