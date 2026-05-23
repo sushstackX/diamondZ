@@ -1,48 +1,131 @@
 <nav class="navbar">
 
   <!-- LOGO -->
-  <div class="logo">
-    DiamondZ<span>◆</span>PPF
+  <div class="logo" routerLink="/">
+    <img src="../assets/images/logo.png" />
+    <p>Paint Protection Film</p>
   </div>
 
-  <!-- NAV LINKS -->
-  <div class="nav-links">
+  <!-- MOBILE MENU BUTTON -->
+  <div class="menu-toggle" (click)="toggleMenu()">
 
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      Home
-    </a>
+    <span [class.active]="isMenuOpen"></span>
+    <span [class.active]="isMenuOpen"></span>
+    <span [class.active]="isMenuOpen"></span>
 
-    <!-- SERVICES DROPDOWN -->
-    <div class="dropdown">
+  </div>
 
-      <a class="dropdown-toggle" (click)="toggleServices()">
-        Services ▾
+  <!-- NAVIGATION -->
+  <div class="nav-wrapper" [class.open]="isMenuOpen">
+
+    <div class="nav-links">
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()">
+
+        Home
+
       </a>
 
-      <div class="dropdown-menu" *ngIf="isServicesOpen">
+      <!-- DROPDOWN -->
+      <div class="dropdown">
 
         <a
-          *ngFor="let service of services"
-          [routerLink]="service.route"
-          (click)="closeDropdown()">
+          class="dropdown-toggle"
+          (click)="toggleServices()">
 
-          {{ service.name }}
+          Services ▾
 
         </a>
 
+        <div
+          class="dropdown-menu"
+          *ngIf="isServicesOpen">
+
+          <a
+            *ngFor="let service of services"
+            [routerLink]="service.route"
+            (click)="closeDropdown(); closeMenu()">
+
+            {{ service.name }}
+
+          </a>
+
+        </div>
+
       </div>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+
+        About
+
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+
+        Contact
+
+      </a>
+
+      <!-- <a
+        routerLink="/admin"
+        routerLinkActive="active"
+        (click)="closeMenu()">
+
+        Admin
+
+      </a> -->
 
     </div>
 
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    <!-- BUTTON -->
+    <button
+      class="quote-btn"
+      (click)="openQuotePopup()">
 
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      Get A Quote
+
+    </button>
+  </div>
+
+</nav>
+
+<!-- =========================
+     QUOTE POPUP
+========================= -->
+
+<div
+  class="quote-popup-overlay"
+  *ngIf="showQuotePopup"
+  (click)="closeQuotePopup()">
+
+  <div
+    class="quote-popup-content"
+    (click)="$event.stopPropagation()">
+
+    <!-- CLOSE BUTTON -->
+
+    <button
+      class="close-popup"
+      (click)="closeQuotePopup()">
+
+      ✕
+
+    </button>
+
+    <!-- QUOTE COMPONENT -->
+
+    <app-quote></app-quote>
 
   </div>
 
-  <!-- BUTTON -->
-  <button routerLink="/quote" class="quote-btn">
-    Get A Quote
-  </button>
-
-</nav>
+</div>

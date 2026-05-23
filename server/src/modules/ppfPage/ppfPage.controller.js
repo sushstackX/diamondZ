@@ -162,6 +162,46 @@ const getPageById = async (req, res) => {
 
 };
 
+const uploadGallery = async (req, res) => {
+
+  try {
+
+    const { id } = req.params;
+    const page = await service.getPageById(id);
+
+    if (!page) {
+      return res.status(404).json({
+        success: false,
+        message: 'PPF page not found'
+      });
+    }
+
+    const images = (req.files || []).map((file) => {
+      return `${req.protocol}://${req.get('host')}/uploads/${file.filename}`;
+    });
+
+    const gallery = Array.isArray(page.gallery)
+      ? page.gallery.concat(images)
+      : images;
+
+    const data = await service.updateGallery(id, gallery);
+
+    res.status(200).json({
+      success: true,
+      data
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
+
+};
+
 module.exports = {
   getAllPages,
   getPageBySlug,
@@ -169,5 +209,6 @@ module.exports = {
   createPage,
   createManyPages,
   updatePage,
-  deletePage
+  deletePage,
+  uploadGallery
 };

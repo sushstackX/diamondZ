@@ -5,28 +5,38 @@
     <div class="gloss-container">
 
       <!-- HEADER -->
-    <div class="header">
+      <div class="header">
 
-      <h1>{{ pageData.title }}</h1>
+        <h1>{{ pageData.title }}</h1>
 
-      <p>{{ pageData.subtitle }}</p>
+        <p>{{ pageData.subtitle }}</p>
 
-    </div>
+      </div>
 
-    <div class="content">
+      <div class="content">
 
-      <!-- INTRO -->
-      <div class="intro-card">
+        <!-- INTRO -->
+        <div class="intro-card">
 
-        <img [src]="pageData.gallery[0]" />
+          <!-- TOP -->
+          <div class="intro-top">
 
-        <div class="intro-text">
+            <img
+              [src]="introImage"
+              alt="PPF Image"
+            />
 
-          <h2>{{ pageData.introTitle }}</h2>
+            <div class="intro-text">
 
-          <p>
-            {{ pageData.introDesc }}
-          </p>
+              <h2>{{ pageData.introTitle }}</h2>
+
+              <p>
+                {{ pageData.introDesc }}
+              </p>
+
+            </div>
+
+          </div>
 
           <!-- FEATURES -->
           <div class="intro-features">
@@ -36,14 +46,18 @@
               *ngFor="let f of pageData.features"
             >
 
-              <span class="icon">✓</span>
+              <div class="icon">
+
+                <lucide-icon
+                  [img]="chevronIcon">
+                </lucide-icon>
+
+              </div>
 
               <div>
 
                 <h4>{{ f.title }}</h4>
 
-                <p>{{ f.description }}</p>
-
               </div>
 
             </div>
@@ -53,63 +67,47 @@
         </div>
 
       </div>
+          
+      <!-- =========================
+          GALLERY SECTION
+      ========================= -->
 
-      <!-- WARRANTY -->
-      <div class="section">
+      <div
+        class="gallery-section"
+        *ngIf="pageData.gallery?.length"
+      >
 
-        <h2>Warranty Coverage</h2>
+        <div class="gallery-header">
 
-        <div class="warranty-plans">
+          <h2>
+            Gallery Showcase
+          </h2>
 
-          <div
-            class="plan-card"
-            *ngFor="let w of pageData.warranties"
-          >
+          <p>
+            Premium paint protection film finishes
+          </p>
 
-            <div class="plan-header">
+        </div>
 
-              <h3>
-                {{ w.years }} Years Warranty
-              </h3>
+        <!-- SLIDER -->
 
-              <p>
-                {{ w.title }}
-              </p>
+        <div class="gallery-slider">
 
-            </div>
+          <div class="gallery-track">
 
-            <div class="plan-body">
+            <div
+              class="gallery-card"
+              *ngFor="let image of pageData.gallery"
+            >
 
-              <div
-                class="plan-point"
-                *ngFor="let p of w.points"
-              >
-
-                <span class="tick">✓</span>
-
-                <span>{{ p }}</span>
-
-              </div>
+              <img
+                [src]="image"
+                alt="Gallery Image"
+              />
 
             </div>
 
           </div>
-
-        </div>
-
-      </div>
-
-      <!-- GALLERY -->
-      <div class="section">
-
-        <h2>Gallery</h2>
-
-        <div class="gallery">
-
-          <img
-            *ngFor="let img of pageData.gallery"
-            [src]="img"
-          />
 
         </div>
 
@@ -117,21 +115,34 @@
 
     </div>
 
+
+
   </div>
 
-</div>
+
 
 </ng-container>
 
 <ng-template #waitingState>
+
   <div class="gloss-wrapper loading-state">
+
     <div class="gloss-container">
+
       <div class="header">
-        <h1 *ngIf="loading">Loading details...</h1>
-        <h1 *ngIf="!loading">Details unavailable</h1>
-        <p *ngIf="loading">Please wait while we load the selected PPF.</p>
-        <p *ngIf="!loading">The PPF details could not be loaded. Try refreshing again.</p>
+
+        <h1 *ngIf="loading">
+          Loading details...
+        </h1>
+
+        <h1 *ngIf="!loading">
+          Details unavailable
+        </h1>
+
       </div>
+
     </div>
+
   </div>
+
 </ng-template>

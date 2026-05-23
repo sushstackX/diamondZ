@@ -1,50 +1,53 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-
+import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { CommonModule, NgFor } from '@angular/common';
-
+import { CommonModule, isPlatformBrowser, NgFor } from '@angular/common';
 import { PpfService } from '../../services/ppf.service';
-
 import { Subject, takeUntil, tap } from 'rxjs';
+
+import {
+  LucideAngularModule,
+  ChevronsRight
+} from 'lucide-angular';
 
 @Component({
   selector: 'app-ppf-details',
-
   standalone: true,
-
   imports: [
     CommonModule,
-    NgFor
+    NgFor,
+    LucideAngularModule
   ],
-
   templateUrl: './ppf-details.html',
-
   styleUrls: ['./ppf-details.css']
 })
 
 export class PpfDetails implements OnInit, OnDestroy {
 
   slug = '';
-
   pageData: any;
-
   loading = true;
-
   currentIndex = 0;
-
   transformStyle = 'translateX(0px)';
+  chevronIcon = ChevronsRight;
 
   private destroy$ = new Subject<void>();
-
   private slideInterval: any;
 
   constructor(
+   
     private route: ActivatedRoute,
-    private ppfService: PpfService
+    private ppfService: PpfService,
+     @Inject(PLATFORM_ID) private platformId: object,
   ) {}
 
+  carImages: any = {
+    'gloss-ppf': 'assets/images/glossmain.png',
+    'matte-ppf': 'assets/images/mattemain.png',
+    'colored-ppf': 'assets/images/colormain.png'
+  };
+
   ngOnInit(): void {
+   
 
     this.route.data.pipe(
       takeUntil(this.destroy$),
@@ -52,30 +55,52 @@ export class PpfDetails implements OnInit, OnDestroy {
         this.loading = true;
       })
     ).subscribe({
+
       next: (data: any) => {
+
         this.pageData = data?.pageData;
-        this.slug = this.route.snapshot.paramMap.get('slug') || '';
+
+        this.slug =
+          this.route.snapshot.paramMap.get('slug') || '';
+
+        // console.log('SLUG:', this.slug);
+
         this.loading = false;
       },
+
       error: () => {
+
         this.pageData = undefined;
+
         this.loading = false;
       }
+
     });
 
     this.slideInterval = setInterval(() => {
-      this.nextSlide();
+      // this.nextSlide();
     }, 2500);
-
+     if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
   }
 
   ngOnDestroy(): void {
+
     this.destroy$.next();
     this.destroy$.complete();
 
     if (this.slideInterval) {
       clearInterval(this.slideInterval);
     }
+  }
+
+  get introImage(): string {
+
+    return (
+      this.carImages[this.slug] ||
+      'assets/images/glossmain.png'
+    );
   }
 
   loadPage() {
@@ -85,31 +110,6 @@ export class PpfDetails implements OnInit, OnDestroy {
       .subscribe((res: any) => {
 
         this.pageData = res.data;
-
       });
-
   }
-
-  nextSlide() {
-
-    if (!this.pageData?.gallery) return;
-
-    const cardWidth = 266;
-
-    this.currentIndex++;
-
-    if (
-      this.currentIndex >
-      this.pageData.gallery.length - 3
-    ) {
-
-      this.currentIndex = 0;
-
-    }
-
-    this.transformStyle =
-      `translateX(-${this.currentIndex * cardWidth}px)`;
-
-  }
-
 }

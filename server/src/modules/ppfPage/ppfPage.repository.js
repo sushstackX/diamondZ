@@ -3,12 +3,15 @@ const prisma = require('../../config/prisma');
 const getAllPages = async () => {
 
   return prisma.ppfPage.findMany({
+
     where: {
       isActive: true
     },
+
     orderBy: {
       id: 'asc'
     }
+
   });
 
 };
@@ -16,9 +19,11 @@ const getAllPages = async () => {
 const getPageBySlug = async (slug) => {
 
   return prisma.ppfPage.findUnique({
+
     where: {
       slug
     }
+
   });
 
 };
@@ -42,10 +47,29 @@ const createManyPages = async (data) => {
 const updatePage = async (id, data) => {
 
   return prisma.ppfPage.update({
+
     where: {
       id: Number(id)
     },
+
     data
+
+  });
+
+};
+
+const updateGallery = async (id, gallery) => {
+
+  return prisma.ppfPage.update({
+
+    where: {
+      id: Number(id)
+    },
+
+    data: {
+      gallery
+    }
+
   });
 
 };
@@ -53,9 +77,11 @@ const updatePage = async (id, data) => {
 const deletePage = async (id) => {
 
   return prisma.ppfPage.delete({
+
     where: {
       id: Number(id)
     }
+
   });
 
 };
@@ -63,19 +89,24 @@ const deletePage = async (id) => {
 const getPageById = async (id) => {
 
   return prisma.ppfPage.findUnique({
+
     where: {
       id: Number(id)
     }
+
   });
 
 };
 
 module.exports = {
+
   getAllPages,
   getPageBySlug,
   getPageById,
   createPage,
   createManyPages,
   updatePage,
+  updateGallery,
   deletePage
+
 };

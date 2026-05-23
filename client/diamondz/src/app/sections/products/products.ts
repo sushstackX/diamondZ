@@ -14,20 +14,20 @@ export class Products {
     {
       title: 'Gloss PPF',
       description: 'Enhances shine with a mirror-like finish while protecting against scratches and UV damage.',
-      image: 'assets/images/gloss.png',
-      link: '/ppf/gloss'
+      image: 'assets/images/glossppf2.png',
+      link: '/services/gloss-ppf'
     },
     {
       title: 'Matte PPF',
       description: 'Transforms your vehicle into a smooth matte look with premium protection and durability.',
       image: 'assets/images/matte.png',
-      link: '/ppf/matte'
+      link: '/services/matte-ppf'
     },
     {
       title: 'Colored PPF',
       description: 'Change your car color with protection. Combines styling and safety in one solution.',
-      image: 'assets/images/colored.png',
-      link: '/ppf/colored'
+      image: 'assets/images/colorppf2.jpg',
+      link: '/services/colored-ppf'
     }
   ];
 }

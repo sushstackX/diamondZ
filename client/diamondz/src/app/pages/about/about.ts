@@ -1,47 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Footer } from '../../layout/footer/footer';
-import { Navbar } from '../../layout/navbar/navbar';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ Footer,CommonModule],
+  imports: [Footer, CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
 export class About {
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+   ngOnInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+
+  }
   whyChooseUs = [
 
     {
-      number: '01',
-      title: 'Advanced TPU Technology',
+      image: '../assets/images/why1.jpg',
+      title: 'Direct Global Material Sourcing',
       description:
-        'Engineered with premium self-healing protection films delivering exceptional durability, clarity and surface defense.'
+        'We import premium-grade raw materials and coatings from leading global innovators in the USA and Indonesia, including trusted suppliers associated with Lubrizol, Ashland, BASF, and Covestro technologies — ensuring exceptional clarity, durability, and long-term performance in every film.'
     },
 
     {
-      number: '02',
-      title: 'Luxury Finish Quality',
+      image: '../assets/images/why2.png',
+      title: 'Premium TPU Technology',
       description:
-        'Deep gloss enhancement and elegant matte finishes crafted to elevate the visual appeal of modern vehicles.'
+        'We use advanced TPU-based protection films designed for superior gloss retention, self-healing performance, stain resistance, and long-lasting protection against scratches, swirl marks, and environmental damage.'
     },
 
     {
-      number: '03',
-      title: 'Trusted Performance',
+      image: '../assets/images/why3.png',
+      title: 'Trusted Quality & Authentic Products From Germany',
       description:
-        'Reliable protection solutions trusted for long-lasting automotive surface preservation and premium aesthetics.'
+        'We believe in transparency and genuine materials only. Every film we install is sourced from globally recognized manufacturers with proven automotive-grade standards and consistent quality control.'
     },
 
     {
-      number: '04',
-      title: 'Innovation Driven',
+      image: '../assets/images/why4.png',
+      title: 'Complete Vehicle Protection Solutions',
       description:
-        'Constantly evolving with advanced coating technologies and next-generation automotive protection systems.'
-    }
+        'From Paint Protection Films and matte finishes to gloss enhancement, roof wraps, pillar protection, and interior protection solutions — we provide complete customization and protection packages tailored to your vehicle.'
+    },
+
+
+    {
+      image: '../assets/images/why5.png',
+      title: 'Reliable Worldwide Distribution',
+      description:
+        'With efficient logistics management and international supply capabilities, we ensure smooth and timely product delivery for customers and partners across global automotive markets.'
+    },
 
   ];
+
+
 
 }

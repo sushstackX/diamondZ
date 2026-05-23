@@ -5,14 +5,20 @@
 
 /* HEADER */
 .products-header {
+  font-size: 64px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 800;
+  color: black;
+  margin-bottom: 25px;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .products-header h2 {
+   font-size: 60px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  color: var(--secondary-glow);
+  font-weight: 800;
+  /* color: var(--secondary-glow); */
 }
 
 /* SLIDER (scrollable row) */
@@ -26,7 +32,7 @@
 /* CARD */
 .product-card {
   min-width: 320px;
-  background: var(--black2);
+  background: var(--black3);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;

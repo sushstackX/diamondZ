@@ -1,0 +1,177 @@
+<section class="admin">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+
+    <select (change)="onResourceChange($event)">
+
+      <option value="" disabled selected>
+        Select Resource
+      </option>
+
+      <option
+        *ngFor="let r of resources"
+        [value]="r.key">
+
+        {{ r.label }}
+
+      </option>
+
+    </select>
+
+    <button (click)="startNew()">
+      + New
+    </button>
+
+  </div>
+
+  <!-- EMPTY -->
+  <div
+    *ngIf="!resources.length"
+    class="empty">
+
+    Loading resources...
+
+  </div>
+
+  <!-- FORM -->
+  <div
+    class="form"
+    *ngIf="selectedResource">
+
+    <h2>
+      {{ selectedResource.label }}
+    </h2>
+
+    <!-- FIELDS -->
+    <div
+      class="field"
+      *ngFor="let field of selectedResource.fields">
+
+      <label>
+        {{ field.label || field.name }}
+      </label>
+
+      <!-- TEXT -->
+      <input
+        *ngIf="field.type === 'text'"
+        type="text"
+        [(ngModel)]="editData[field.name]" />
+
+      <!-- TEXTAREA -->
+      <textarea
+        *ngIf="field.type === 'textarea'"
+        rows="6"
+        [(ngModel)]="editData[field.name]">
+      </textarea>
+
+      <!-- CHECKBOX -->
+      <input
+        *ngIf="field.type === 'checkbox'"
+        type="checkbox"
+        [(ngModel)]="editData[field.name]" />
+
+    </div>
+
+    <!-- GALLERY PREVIEW -->
+    <div
+      class="gallery-preview"
+      *ngIf="editData.gallery?.length">
+
+      <div
+        class="gallery-item"
+        *ngFor="let img of editData.gallery; let i = index">
+
+        <img
+          [src]="'http://localhost:5000' + img"
+          alt="gallery" />
+
+        <button
+          type="button"
+          (click)="removeImage(i)">
+
+          ×
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- GALLERY UPLOAD -->
+    <div
+      class="upload-section"
+      *ngIf="selectedItem?.id">
+
+      <label>
+        Upload Gallery Images
+      </label>
+
+      <input
+        type="file"
+        multiple
+        (change)="uploadGallery($event)" />
+
+    </div>
+
+    <!-- SAVE -->
+    <button (click)="save()">
+
+      {{ selectedItem ? 'Update' : 'Create' }}
+
+    </button>
+
+  </div>
+
+  <hr />
+
+  <!-- TABLE -->
+  <table *ngIf="items.length && columns.length">
+
+    <thead>
+
+      <tr>
+
+        <th *ngFor="let col of columns">
+
+          {{ col }}
+
+        </th>
+
+        <th>
+          Actions
+        </th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let item of items">
+
+        <td *ngFor="let col of columns">
+
+          {{ item[col] }}
+
+        </td>
+
+        <td>
+
+          <button (click)="selectItem(item)">
+            Edit
+          </button>
+
+          <button (click)="delete(item)">
+            Delete
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</section>

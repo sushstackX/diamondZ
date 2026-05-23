@@ -1,46 +1,58 @@
 <section class="hero">
 
-  <!-- BACKGROUND SLIDER -->
+  <!-- BACKGROUND -->
   <div class="hero-bg">
 
-    <div
-      *ngFor="let img of images; let i = index"
-      class="bg-slide"
+    <img
+      *ngFor="let slide of slides; let i = index"
+      [src]="slide.image"
+      class="slide-image"
       [class.active]="i === currentIndex"
-      [style.background-image]="'url(' + img + ')'"
-    ></div>
+      alt=""
+    />
 
   </div>
 
   <!-- CONTENT -->
+  <div class="hero-content">
 
-  <!-- <div class="hero-overlay">
+    <div
+      class="hero-text"
+      [@textAnimation]="currentIndex"
+    >
 
-    <p class="hero-eyebrow">
-      Premium Paint Protection Film
-    </p>
+      <p class="hero-top">
+        {{ slides[currentIndex].top }}
+      </p>
 
-    <h1 class="hero-title">
-      Protect Your Car With <span>DiamondZ PPF</span>
-    </h1>
+      <div class="hero-line"></div>
 
-    <p class="hero-sub">
-      Premium protection with gloss, matte and coloured PPF solutions.
-      Keep your car looking brand new for years.
-    </p>
+      <h1 class="hero-title">
 
-    <div class="hero-buttons">
+        <span class="title1">
+          {{ slides[currentIndex]?.title1 }}
+        </span>
 
-      <button class="btn-primary">
-        Get Quote
-      </button>
+        <strong class="white">
+          {{ slides[currentIndex]?.white }}
+        </strong>
 
-      <button class="btn-outline">
-        Explore Services
-      </button>
+        <span class="title2">
+          {{ slides[currentIndex]?.title2 }}
+        </span>
+
+      </h1>
+
+      <h2 class="hero-subtitle">
+        {{ slides[currentIndex].subtitle }}
+      </h2>
+
+      <p class="hero-desc">
+        {{ slides[currentIndex].desc }}
+      </p>
 
     </div>
 
-  </div> -->
+  </div>
 
 </section>

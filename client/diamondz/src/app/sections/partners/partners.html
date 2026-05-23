@@ -3,16 +3,179 @@
   <div class="partners-container">
 
     <!-- HEADER -->
+
     <div class="partners-header">
-      <p class="partners-eyebrow">TRUSTED BY</p>
-      <h2 class="partners-title">Our Global Partners</h2>
+
+      <p class="partners-eyebrow">
+        OUR PARTNERS
+      </p>
+
+      <h2 class="partners-title">
+        Trusted Global Partners
+      </h2>
+
+      <p class="partners-subtitle">
+        We collaborate with world-leading chemical companies to
+        bring high-quality raw materials for advanced polyurethane solutions.
+      </p>
+
     </div>
 
-    <!-- LOGO GRID -->
+    <!-- GRID -->
+
     <div class="partners-grid">
 
-      <div class="partner-card" *ngFor="let item of partners">
-        <img [src]="item.logo" [alt]="item.name" />
+      <div
+        class="partner-card"
+        *ngFor="let item of partners">
+
+        <div class="partner-logo">
+
+          <img
+            [src]="item.logo"
+            [alt]="item.name">
+
+        </div>
+
+        <div class="partner-info">
+
+          <div>
+
+            <h4>{{ item.name }}</h4>
+
+            <p>{{ item.country }}</p>
+
+          </div>
+
+          <img
+            class="flag"
+            [src]="item.flag"
+            [alt]="item.country">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- IMPORT SECTION -->
+
+    <div class="import-section">
+
+      <div class="import-top">
+
+        <div class="import-icon">
+
+           <img src="assets/images/globe.svg" alt="Global Standards" class="feature-svg">
+
+
+        </div>
+
+        <h3>
+          Importing Premium Materials From
+        </h3>
+
+      </div>
+
+      <div class="import-content">
+
+        <!-- USA -->
+
+        <div class="import-country">
+
+          <img
+            src="assets/images/usa.png"
+            alt="USA">
+
+          <div>
+
+            <h4>USA</h4>
+
+            <p>
+              Sourced from trusted American manufacturers
+              for consistent quality and performance.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- CENTER -->
+
+        <div class="import-center">
+
+          <img src="assets/images/landmark.svg" alt="Global Standards" class="feature-svg">
+
+
+        </div>
+
+        <!-- GERMANY -->
+
+        <div class="import-country">
+
+          <img
+            src="assets/images/germany.png"
+            alt="Germany">
+
+          <div>
+
+            <h4>Germany</h4>
+
+            <p>
+              Imported from leading German companies
+              known for innovation and sustainability.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div class="partner-features">
+
+      <div class="feature-item">
+
+        <lucide-icon [img]="ShieldCheck"></lucide-icon>
+
+        <span>World-Class Quality</span>
+
+      </div>
+
+      <div class="feature-item">
+
+        <lucide-icon [img]="Link2"></lucide-icon>
+
+        <span>Strong Partnerships</span>
+
+      </div>
+
+      <div class="feature-item">
+
+        <lucide-icon [img]="BadgeCheck"></lucide-icon>
+
+        <span>Reliable Supply</span>
+
+      </div>
+
+      <div class="feature-item">
+
+        <lucide-icon [img]="FlaskConical"></lucide-icon>
+
+        <span>Innovation Driven</span>
+
+      </div>
+
+      <div class="feature-item">
+
+        <lucide-icon [img]="Globe"></lucide-icon>
+
+        <span>Global Standards</span>
+
       </div>
 
     </div>

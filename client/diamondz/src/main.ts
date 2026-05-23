@@ -11,6 +11,7 @@ import { FaqService } from './app/services/faq.service';
 import { ProcessStepService } from './app/services/process-step.service';
 import { BenefitService } from './app/services/benefit.service';
 import { PpfService } from './app/services/ppf.service';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 function preloadApis(
   faqService: FaqService,
@@ -31,6 +32,7 @@ function preloadApis(
 bootstrapApplication(App, {
   providers: [
     provideRouter(routes),
+    provideAnimations(),
     provideHttpClient(
       withFetch(),
       withInterceptors([httpCacheInterceptor])
