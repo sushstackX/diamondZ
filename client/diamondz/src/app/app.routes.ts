@@ -8,17 +8,14 @@ import { Quote } from './pages/quote/quote';
 import { PpfDetails } from './sections/ppf-details/ppf-details';
 import { PpfDetailsResolver } from './sections/ppf-details/ppf-details.resolver';
 import { Admin } from './pages/admin/admin';
+import { NotFound } from './pages/not-found/not-found';
 
 
 export const routes: Routes = [
   { path: '', component: Home,runGuardsAndResolvers: 'always' },
   { path: 'about', component: About },
- {
-    path: 'services',
-    component: Services,
-
+  { path: 'services', component: Services,
     children: [
-
       {
         path: ':slug',
         component: PpfDetails,
@@ -27,16 +24,14 @@ export const routes: Routes = [
         },
         runGuardsAndResolvers: 'paramsOrQueryParamsChange'
       },
-
       {
         path: '',
         redirectTo: 'gloss-ppf',
         pathMatch: 'full'
       }
-
     ]
   },
   { path: 'contact', component: Contact },
   { path: 'quote', component: Quote },
-  // { path: 'admin', component: Admin }
+  { path: '**', component: NotFound }
 ];

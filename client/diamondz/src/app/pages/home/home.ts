@@ -1,10 +1,12 @@
 import {
   Component,
   OnInit,
-  OnDestroy
+  OnDestroy,
+  PLATFORM_ID,
+  Inject
 } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
 import { Products } from '../../sections/products/products';
 import { Hero } from '../../sections/hero/hero';
@@ -37,6 +39,7 @@ import { BenefitService } from '../../services/benefit.service';
     Vision,
     Faq,
     Partners,
+    // Video,
     Footer
   ],
   templateUrl: './home.html',
@@ -56,7 +59,8 @@ export class Home implements OnInit, OnDestroy {
   constructor(
     private faqService: FaqService,
     private processStepService: ProcessStepService,
-    private benefitService: BenefitService
+    private benefitService: BenefitService,
+     @Inject(PLATFORM_ID) private platformId: object,
   ) {}
 
     // ✅ PRODUCTS DATA (dummy backend response)
@@ -78,6 +82,10 @@ export class Home implements OnInit, OnDestroy {
       this.currentIndex =
         (this.currentIndex + 1) % this.images.length;
     });
+
+     if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
   }
 
   ngOnDestroy() {

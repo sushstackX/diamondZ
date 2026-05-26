@@ -8,6 +8,7 @@ import {
   LucideAngularModule,
   ChevronsRight
 } from 'lucide-angular';
+import { Footer } from '../../layout/footer/footer';
 
 @Component({
   selector: 'app-ppf-details',
@@ -15,7 +16,8 @@ import {
   imports: [
     CommonModule,
     NgFor,
-    LucideAngularModule
+    LucideAngularModule,
+    Footer
   ],
   templateUrl: './ppf-details.html',
   styleUrls: ['./ppf-details.css']

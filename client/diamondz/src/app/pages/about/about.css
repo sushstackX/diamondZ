@@ -75,12 +75,27 @@
   color: var(--white);
 
   margin-bottom: 30px;
+  margin : auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: 20%;
 }
 
-.hero-title span {
-  color: var(--primary-light);
+.hero-title span{
+  display:flex;
+  align-items:center;
+   width: 35%;
+   margin-right: -2%;
 }
 
+.hero-title img {
+  /* width: 35%; */
+  height: 90%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
 .hero-description {
   max-width: 850px;
 
@@ -344,42 +359,28 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
-  .about-hero {
-    background-attachment: scroll;
-  }
+  .hero-title{
+    font-size: 42px;
 
-  .hero-title {
-    font-size: 56px;
-  }
+    margin-left: 0;
 
-  .hero-description {
-    font-size: 18px;
-  }
+    justify-content: center;
+    text-align: center;
 
-  .section-title {
-    font-size: 46px;
-  }
-
-  .about-info-section,
-  .features-section {
-    padding: 90px 24px;
-  }
-
-  .about-grid {
-    gap: 70px;
-  }
-
-  .about-image {
-    height: 500px;
-  }
-
-  .floating-card {
-    position: relative;
-    bottom: 0;
+    gap: 10px;
     width: 100%;
-    margin-top: -30px;
+  }
+
+  .hero-title span{
+    width: auto;
+    margin-right: 0;
+  }
+
+  .hero-title img{
+    height: 45px;
+    margin-bottom: 5px;
   }
 
 }
