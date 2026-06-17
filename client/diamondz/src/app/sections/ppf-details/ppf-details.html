@@ -68,6 +68,68 @@
 
       </div>
           
+
+      <!-- =========================
+     WARRANTY SECTION
+========================= -->
+
+<div
+  class="section"
+  *ngIf="pageData.warranties?.length"
+>
+
+  <h2>
+    Warranty Protection Plans
+  </h2>
+
+  <div class="warranty-plans">
+
+    <div
+      class="plan-card"
+      *ngFor="let plan of pageData.warranties"
+    >
+
+      <!-- HEADER -->
+
+      <div class="plan-header">
+
+        <h3>
+           {{ plan.years }}X
+         
+        </h3>
+
+        <p>
+           {{ plan.title }}
+        </p>
+
+      </div>
+
+      <!-- BODY -->
+
+      <div class="plan-body">
+
+        <div
+          class="plan-point"
+          *ngFor="let point of plan.points"
+        >
+
+          <div class="tick">
+            ✓
+          </div>
+
+          <div>
+            {{ point }}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
       <!-- =========================
           GALLERY SECTION
       ========================= -->
@@ -120,7 +182,7 @@
   </div>
 
 
-
+<app-footer></app-footer>
 </ng-container>
 
 <ng-template #waitingState>

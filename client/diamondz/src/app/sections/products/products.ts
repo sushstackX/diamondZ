@@ -14,7 +14,7 @@ export class Products {
     {
       title: 'Gloss PPF',
       description: 'Enhances shine with a mirror-like finish while protecting against scratches and UV damage.',
-      image: 'assets/images/glossppf2.png',
+      image: 'assets/images/gloss_1.png',
       link: '/services/gloss-ppf'
     },
     {

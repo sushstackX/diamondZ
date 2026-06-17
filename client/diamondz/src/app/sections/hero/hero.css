@@ -120,7 +120,7 @@
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
-  font-size: 80px;
+  font-size: 75px;
   font-weight: 800;
   font-style: italic;
   line-height: 0.9;
@@ -145,23 +145,25 @@
     #102a7a 85%,
     #050b2c 100%
   );
+ display: inline-block;  
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+   padding-right: 10px;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* WHITE */
 
 .hero-title .white {
   color: #fff;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 /* TITLE 2 */
 
 .hero-title .title2 {
   color: #e5e5e5;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 /* =========================
