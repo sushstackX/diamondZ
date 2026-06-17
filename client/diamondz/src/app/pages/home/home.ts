@@ -63,7 +63,6 @@ export class Home implements OnInit, OnDestroy {
      @Inject(PLATFORM_ID) private platformId: object,
   ) {}
 
-    // ✅ PRODUCTS DATA (dummy backend response)
   products = [
     {
       title: 'Gloss PPF',
@@ -83,7 +82,7 @@ export class Home implements OnInit, OnDestroy {
         (this.currentIndex + 1) % this.images.length;
     });
 
-     if (isPlatformBrowser(this.platformId)) {
+     if (isPlatformBrowser(this.platformId)) {  
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
   }
