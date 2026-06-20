@@ -6,20 +6,26 @@
 .company-container {
   max-width: 1200px;
   margin: auto;
-
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
   align-items: center;
 }
 
-/* LEFT */
+/* HEADING */
 .company-title {
+  grid-column: 1 / -1;
   font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
+  font-size: 64px;
   font-weight: 400;
   color: var(--diamond-bright);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+/* LEFT CONTENT */
+.company-left {
+  width: 100%;
 }
 
 .company-text {
@@ -30,20 +36,24 @@
 }
 
 /* RIGHT SLIDER */
+.company-right {
+  width: 100%;
+}
+
 .slider {
   position: relative;
+  width: 100%;
   height: 400px;
   border-radius: 14px;
   overflow: hidden;
 }
 
-/* SLIDES */
 .slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -52,16 +62,104 @@
   opacity: 1;
 }
 
-/* LABEL */
 .image-label {
   position: absolute;
   bottom: 20px;
   right: 20px;
-
   font-size: 14px;
   color: var(--white);
-
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 6px 12px;
   border-radius: 6px;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .company {
+    padding: 80px 30px;
+  }
+
+  .company-container {
+    gap: 40px;
+  }
+
+  .company-title {
+    font-size: 52px;
+  }
+
+  .slider {
+    height: 350px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .company {
+    padding: 60px 20px;
+  }
+
+  .company-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Order: Heading → Image → Text */
+  .company-title {
+    order: 1;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .company-right {
+    order: 2;
+    width: 100%;
+  }
+
+  .company-left {
+    order: 3;
+  }
+
+  .company-text {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .slider {
+    height: 280px;
+  }
+
+  .image-label {
+    bottom: 12px;
+    right: 12px;
+    font-size: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .company {
+    padding: 50px 15px;
+  }
+
+  .company-title {
+    font-size: 32px;
+  }
+
+  .company-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .slider {
+    height: 220px;
+    border-radius: 10px;
+  }
+
+  .image-label {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
 }
