@@ -1,13 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, shareReplay } from 'rxjs';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProcessStepService {
 
-  private apiUrl = 'https://api.diamondzppf.com/api/process-steps';
+  private apiUrl = `${environment.apiUrl}/api/process-steps`;
   private allSteps$?: Observable<any>;
 
   constructor(private http: HttpClient) {}

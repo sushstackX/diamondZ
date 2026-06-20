@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 
 export class ContactService {
 
-  private apiUrl = 'https://api.diamondzppf.com/api/contact';
+  private apiUrl = `${environment.apiUrl}/api/contact`;
 
   constructor(private http: HttpClient) {}
 

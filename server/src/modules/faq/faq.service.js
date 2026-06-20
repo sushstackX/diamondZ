@@ -18,11 +18,7 @@ const createFaq = async (data) => {
     throw new Error("Question and Answer are required");
   }
 
-  return await repo.create({
-    question: data.question,
-    answer: data.answer,
-    isActive: data.isActive ?? true
-  });
+  return await repo.create(data);
 };
 
 // UPDATE

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, forkJoin, Observable, of, shareReplay } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,9 @@ import { catchError, forkJoin, Observable, of, shareReplay } from 'rxjs';
 
 export class PpfService {
 
-  api = 'https://api.diamondzppf.com/api/ppf-pages';
-  uploadUrl = 'https://api.diamondzppf.com/api/uploads';
+  private api = `${environment.apiUrl}/api/ppf-pages`;
+  uploadUrl = `${environment.apiUrl}/api/uploads`;
+  
 
   private slugCache = new Map<string, Observable<any>>();
   private allPages$?: Observable<any>;

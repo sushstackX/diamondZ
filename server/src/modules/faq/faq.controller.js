@@ -9,7 +9,6 @@ const getFaqs = async (req, res) => {
       success: true,
       data
     });
-
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -27,7 +26,6 @@ const getFaq = async (req, res) => {
       success: true,
       data
     });
-
   } catch (error) {
     res.status(404).json({
       success: false,
@@ -46,7 +44,6 @@ const addFaq = async (req, res) => {
       message: "FAQ created successfully",
       data
     });
-
   } catch (error) {
     res.status(400).json({
       success: false,
@@ -65,7 +62,6 @@ const editFaq = async (req, res) => {
       message: "FAQ updated successfully",
       data
     });
-
   } catch (error) {
     res.status(400).json({
       success: false,
@@ -83,7 +79,6 @@ const removeFaq = async (req, res) => {
       success: true,
       message: "FAQ deleted successfully"
     });
-
   } catch (error) {
     res.status(400).json({
       success: false,

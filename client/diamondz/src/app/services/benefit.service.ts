@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, shareReplay } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BenefitService {
 
-  private apiUrl =
-    'https://api.diamondzppf.com/api/benefits';
+  private apiUrl = `${environment.apiUrl}/api/benefits`;
   private benefits$?: Observable<any>;
 
   constructor(private http: HttpClient) {}

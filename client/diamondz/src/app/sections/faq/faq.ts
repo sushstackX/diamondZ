@@ -31,7 +31,7 @@ export class Faq implements OnInit {
       next: (response: any) => {
 
         // console.log('FAQ RESPONSE:', response);
-
+console.log("🔥 SERVICE HIT");
         const items =
           response?.data ??
           response?.faqs ??
