@@ -356,7 +356,7 @@ export class Admin implements OnInit {
     }
 
     this.http.post(
-      `http://localhost:5000/api/ppf-pages/${this.selectedItem.id}/gallery`,
+      `https://api.diamondzppf.com/api/ppf-pages/${this.selectedItem.id}/gallery`,
       formData
     ).subscribe({
 

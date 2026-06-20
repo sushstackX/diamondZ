@@ -7,7 +7,7 @@ import { Observable, shareReplay } from 'rxjs';
 })
 export class FaqService {
 
-  private apiUrl = 'http://localhost:5000/api/faqs';
+  private apiUrl = 'https://api.diamondzppf.com/api/faqs';
   private faqs$?: Observable<any>;
 
   constructor(private http: HttpClient) {}

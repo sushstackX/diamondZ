@@ -7,7 +7,7 @@ import { Observable, shareReplay } from 'rxjs';
 })
 export class ProcessStepService {
 
-  private apiUrl = 'http://localhost:5000/api/process-steps';
+  private apiUrl = 'https://api.diamondzppf.com/api/process-steps';
   private allSteps$?: Observable<any>;
 
   constructor(private http: HttpClient) {}

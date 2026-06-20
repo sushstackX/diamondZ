@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 
 export class ContactService {
 
-  private apiUrl = 'http://localhost:5000/api/contact';
+  private apiUrl = 'https://api.diamondzppf.com/api/contact';
 
   constructor(private http: HttpClient) {}
 

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({ providedIn: 'root' })
 export class AdminService {
 
-  private api = 'http://localhost:5000/api';
+  private api = 'https://api.diamondzppf.com/api';
 
   constructor(private http: HttpClient) {}
 

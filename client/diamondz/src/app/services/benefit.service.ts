@@ -8,7 +8,7 @@ import { Observable, shareReplay } from 'rxjs';
 export class BenefitService {
 
   private apiUrl =
-    'http://localhost:5000/api/benefits';
+    'https://api.diamondzppf.com/api/benefits';
   private benefits$?: Observable<any>;
 
   constructor(private http: HttpClient) {}

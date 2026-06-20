@@ -8,8 +8,8 @@ import { catchError, forkJoin, Observable, of, shareReplay } from 'rxjs';
 
 export class PpfService {
 
-  api = 'http://localhost:5000/api/ppf-pages';
-  uploadUrl = 'http://localhost:5000/api/uploads';
+  api = 'https://api.diamondzppf.com/api/ppf-pages';
+  uploadUrl = 'https://api.diamondzppf.com/api/uploads';
 
   private slugCache = new Map<string, Observable<any>>();
   private allPages$?: Observable<any>;
