@@ -1,17 +1,16 @@
 require("dotenv").config();
 const app = require("./app");
 
-// ✅ Debug DATABASE_URL properly (don’t truncate too early)
-console.log("DATABASE_URL:", process.env.DATABASE_URL);
+// ✅ Debug DATABASE_URL (safe)
+console.log("ENV CHECK:");
 
-// Optional: safer preview (hides password if present)
 if (process.env.DATABASE_URL) {
   const url = process.env.DATABASE_URL;
   const safePreview = url.includes("@")
     ? url.split("@")[0] + "@***"
     : url.substring(0, 30);
 
-  console.log("DATABASE_URL preview:", safePreview);
+  console.log("DATABASE_URL loaded:", safePreview);
 } else {
   console.log("❌ DATABASE_URL is NOT loaded");
 }
