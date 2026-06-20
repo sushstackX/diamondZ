@@ -33,7 +33,7 @@ export const routes: Routes = [
   },
   { path: 'contact', component: Contact },
   { path: 'quote', component: Quote },
-  { path: 'admin', component: Admin },
+  // { path: 'admin', component: Admin },
   { path: '**', component: NotFound }
 
 ];
