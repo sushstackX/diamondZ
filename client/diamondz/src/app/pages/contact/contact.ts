@@ -1,5 +1,10 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  PLATFORM_ID,
+  OnInit
+} from '@angular/core';
 
 import Swal from 'sweetalert2';
 
@@ -11,8 +16,8 @@ import {
 } from '@angular/forms';
 
 import { Footer } from '../../layout/footer/footer';
-
 import { ContactService } from '../../services/contact.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -23,10 +28,9 @@ import { ContactService } from '../../services/contact.service';
     ReactiveFormsModule
   ],
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  styleUrl: './contact.css'
 })
-
-export class Contact {
+export class Contact implements OnInit {
 
   contactForm: FormGroup;
   successMsg: string = '';
@@ -37,12 +41,14 @@ export class Contact {
   constructor(
     private fb: FormBuilder,
     private contactService: ContactService,
+    private seoService: SeoService,
     @Inject(PLATFORM_ID) private platformId: object
   ) {
 
     this.contactForm = this.fb.group({
 
       name: ['', Validators.required],
+
       email: [
         '',
         [
@@ -50,23 +56,49 @@ export class Contact {
           Validators.email
         ]
       ],
+
       company: ['', Validators.required],
+
       enquiryType: ['', Validators.required],
-      message: ['', Validators.required],
+
+      message: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
 
-    if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
+    // SEO
+    this.seoService.updateSeo(
+      'Contact DiamondZ PPF | Paint Protection Film Bangalore',
+      'Contact DiamondZ PPF for Gloss PPF, Matte PPF, Colored PPF and premium paint protection solutions in Bangalore.',
+      'Contact DiamondZ PPF, PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF'
+    );
 
+    // Schema
+    this.seoService.addSchema(
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact DiamondZ PPF",
+        "url": "https://diamondzppf.com/contact"
+      },
+      'contact-schema'
+    );
+
+    if (isPlatformBrowser(this.platformId)) {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant' as ScrollBehavior
+      });
+    }
   }
+
   submitForm() {
 
-    // VALIDATION
     if (this.contactForm.invalid) {
+
       Swal.fire({
         icon: 'error',
         title: 'Invalid Form',
@@ -79,7 +111,6 @@ export class Contact {
 
     this.isSubmitting = true;
 
-    // API CALL
     this.contactService
       .submitInquiry(this.contactForm.value)
       .subscribe({
@@ -87,7 +118,7 @@ export class Contact {
         next: (res: any) => {
 
           console.log(
-            "🚗 Enquiry Submitted:",
+            ' Enquiry Submitted:',
             res
           );
 
@@ -102,12 +133,13 @@ export class Contact {
 
           this.contactForm.reset();
           this.isSubmitting = false;
-
         },
 
         error: (err) => {
 
           console.log(err);
+
+          this.isSubmitting = false;
 
           Swal.fire({
 
@@ -122,13 +154,10 @@ export class Contact {
 
   scrollToForm() {
 
-    const el =
-      document.querySelector('#formSection');
+    const el = document.querySelector('#formSection');
 
     el?.scrollIntoView({
       behavior: 'smooth'
     });
   }
-
-
 }

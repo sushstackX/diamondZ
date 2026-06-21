@@ -2,28 +2,46 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-  <loc>https://diamondzppf.com/</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-  <loc>https://diamondzppf.com/about</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://diamondzppf.com/contact</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://diamondzppf.com/services/gloss-ppf</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/quote</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://diamondzppf.com/services/matte-ppf</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/services/gloss-ppf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://diamondzppf.com/services/colored-ppf</loc>
-</url>
+  <url>
+    <loc>https://diamondzppf.com/services/matte-ppf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://diamondzppf.com/services/colored-ppf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
 </urlset>

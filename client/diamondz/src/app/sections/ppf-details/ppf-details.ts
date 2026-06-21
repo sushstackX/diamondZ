@@ -1,14 +1,28 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  PLATFORM_ID,
+  Inject
+} from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule, isPlatformBrowser, NgFor } from '@angular/common';
-import { PpfService } from '../../services/ppf.service';
+import {
+  CommonModule,
+  isPlatformBrowser,
+  NgFor
+} from '@angular/common';
+
 import { Subject, takeUntil, tap } from 'rxjs';
 
 import {
   LucideAngularModule,
   ChevronsRight
 } from 'lucide-angular';
+
 import { Footer } from '../../layout/footer/footer';
+import { PpfService } from '../../services/ppf.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-ppf-details',
@@ -22,7 +36,6 @@ import { Footer } from '../../layout/footer/footer';
   templateUrl: './ppf-details.html',
   styleUrls: ['./ppf-details.css']
 })
-
 export class PpfDetails implements OnInit, OnDestroy {
 
   slug = '';
@@ -36,10 +49,10 @@ export class PpfDetails implements OnInit, OnDestroy {
   private slideInterval: any;
 
   constructor(
-   
     private route: ActivatedRoute,
     private ppfService: PpfService,
-     @Inject(PLATFORM_ID) private platformId: object,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: object
   ) {}
 
   carImages: any = {
@@ -49,7 +62,6 @@ export class PpfDetails implements OnInit, OnDestroy {
   };
 
   ngOnInit(): void {
-   
 
     this.route.data.pipe(
       takeUntil(this.destroy$),
@@ -65,7 +77,8 @@ export class PpfDetails implements OnInit, OnDestroy {
         this.slug =
           this.route.snapshot.paramMap.get('slug') || '';
 
-        // console.log('SLUG:', this.slug);
+        // Dynamic SEO
+        this.setSeo(this.slug);
 
         this.loading = false;
       },
@@ -73,18 +86,79 @@ export class PpfDetails implements OnInit, OnDestroy {
       error: () => {
 
         this.pageData = undefined;
-
         this.loading = false;
       }
-
     });
 
     this.slideInterval = setInterval(() => {
       // this.nextSlide();
     }, 2500);
-     if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant' as ScrollBehavior
+      });
     }
+  }
+
+  private setSeo(slug: string): void {
+
+    const seoMap: any = {
+
+      'gloss-ppf': {
+        title:
+          'Gloss PPF | DiamondZ PPF Bangalore',
+        description:
+          'Premium Gloss Paint Protection Film with self-healing technology, high-gloss finish and long-lasting protection.',
+        schemaName:
+          'Gloss Paint Protection Film'
+      },
+
+      'matte-ppf': {
+        title:
+          'Matte PPF | DiamondZ PPF Bangalore',
+        description:
+          'Premium Matte Paint Protection Film delivering a satin finish while protecting against scratches and environmental damage.',
+        schemaName:
+          'Matte Paint Protection Film'
+      },
+
+      'colored-ppf': {
+        title:
+          'Colored PPF | DiamondZ PPF Bangalore',
+        description:
+          'Premium Colored Paint Protection Film combining style, color transformation and superior paint protection.',
+        schemaName:
+          'Colored Paint Protection Film'
+      }
+    };
+
+    const seo =
+      seoMap[slug] ||
+      seoMap['gloss-ppf'];
+
+    this.seoService.updateSeo(
+      seo.title,
+      seo.description,
+      `${slug}, PPF Bangalore, Paint Protection Film, DiamondZ PPF`
+    );
+
+    this.seoService.addSchema(
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": seo.schemaName,
+        "provider": {
+          "@type": "Organization",
+          "name": "DiamondZ PPF"
+        },
+        "url":
+          `https://diamondzppf.com/services/${slug}`
+      },
+      `${slug}-schema`
+    );
   }
 
   ngOnDestroy(): void {

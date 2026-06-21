@@ -3,8 +3,7 @@ import {
   OnInit,
   OnDestroy,
   PLATFORM_ID,
-  Inject,
-  Renderer2
+  Inject
 } from '@angular/core';
 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -24,8 +23,7 @@ import { Footer } from '../../layout/footer/footer';
 import { FaqService } from '../../services/faq.service';
 import { ProcessStepService } from '../../services/process-step.service';
 import { BenefitService } from '../../services/benefit.service';
-
-import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -56,76 +54,70 @@ export class Home implements OnInit, OnDestroy {
   products = [
     {
       title: 'Gloss PPF',
-      description: 'High-gloss finish paint protection film that enhances shine, protects against scratches, and features self-healing technology.',
+      description:
+        'High-gloss finish paint protection film that enhances shine, protects against scratches, and features self-healing technology.',
       image: 'assets/images/ppf1.jpg'
     },
     {
       title: 'Matte PPF',
-      description: 'Elegant matte finish film that delivers a smooth satin look while protecting your vehicle.',
+      description:
+        'Elegant matte finish film that delivers a smooth satin look while protecting your vehicle.',
       image: 'assets/images/ppf2.jpg'
     }
   ];
 
   constructor(
-    private renderer: Renderer2,
     private faqService: FaqService,
     private processStepService: ProcessStepService,
     private benefitService: BenefitService,
-    @Inject(PLATFORM_ID) private platformId: object,
-    private title: Title,
-    private meta: Meta
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: object
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
 
-    // ✅ SEO ALWAYS RUNS (IMPORTANT FOR GOOGLE)
-    this.title.setTitle("DiamondZ PPF | Premium Paint Protection Film in Bengaluru");
+    // SEO
+    this.seoService.updateSeo(
+      'DiamondZ PPF | Premium Paint Protection Film in Bangalore',
+      'DiamondZ PPF provides premium Gloss PPF, Matte PPF and Colored PPF solutions in Bangalore with advanced paint protection technology.',
+      'PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF, Car Protection Film, DiamondZ PPF'
+    );
 
-    this.meta.updateTag({
-      name: 'description',
-      content: 'DiamondZ PPF offers premium Paint Protection Film in Bengaluru. Gloss, matte & self-healing protection for cars with long-lasting durability.'
-    });
-
-    // ✅ ONLY BROWSER LOGIC
     if (isPlatformBrowser(this.platformId)) {
 
       this.sliderSub = interval(4000).subscribe(() => {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.currentIndex =
+          (this.currentIndex + 1) % this.images.length;
       });
 
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant' as ScrollBehavior
+      });
 
-      this.addSchema();
+      // Structured Data
+      this.seoService.addSchema(
+        {
+          "@context": "https://schema.org",
+          "@type": "AutoRepair",
+          "name": "DiamondZ PPF",
+          "url": "https://diamondzppf.com",
+          "logo": "https://diamondzppf.com/assets/images/logo2-1.png",
+          "image": "https://diamondzppf.com/assets/images/logo2-1.png",
+          "description":
+            "Premium Paint Protection Film provider offering Gloss PPF, Matte PPF and Colored PPF solutions.",
+          "sameAs": [
+            "https://www.instagram.com/diamondzppf",
+            "https://www.facebook.com/diamondzppf"
+          ]
+        },
+        'home-schema'
+      );
     }
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sliderSub?.unsubscribe();
-  }
-
-  addSchema() {
-
-    const existing = document.querySelector('[data-schema="org"]');
-    if (existing) return;
-
-    const script = this.renderer.createElement('script');
-
-    script.type = 'application/ld+json';
-    script.setAttribute('data-schema', 'org');
-
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "DiamondZ PPF",
-      "url": "https://diamondzppf.com",
-      "logo": "https://diamondzppf.com/assets/images/logo2-1.png",
-      "description": "Premium Paint Protection Film provider offering gloss, matte and colored PPF solutions.",
-      "sameAs": [
-        "https://www.instagram.com/diamondzppf",
-        "https://www.facebook.com/diamondzppf"
-      ]
-    });
-
-    this.renderer.appendChild(document.head, script);
   }
 }
