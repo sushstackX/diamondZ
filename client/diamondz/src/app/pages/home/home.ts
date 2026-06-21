@@ -3,43 +3,44 @@ import {
   OnInit,
   OnDestroy,
   PLATFORM_ID,
-  Inject
+  Inject,
+  Renderer2
 } from '@angular/core';
 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { interval, Subscription } from 'rxjs';
+
 import { Products } from '../../sections/products/products';
 import { Hero } from '../../sections/hero/hero';
 import { Benefits } from '../../sections/benefits/benefits';
 import { Process } from '../../sections/process/process';
 import { Faq } from '../../sections/faq/faq';
-import { Contact } from '../contact/contact';
 import { PpfInfoVisual } from '../../sections/ppf-info-visual/ppf-info-visual';
-import { PpfInfoSteps } from '../../sections/ppf-info-steps/ppf-info-steps';
 import { Company } from '../../sections/company/company';
 import { Vision } from '../../sections/vision/vision';
 import { Partners } from '../../sections/partners/partners';
 import { Footer } from '../../layout/footer/footer';
-import { Services } from '../services/services';
+
 import { FaqService } from '../../services/faq.service';
 import { ProcessStepService } from '../../services/process-step.service';
 import { BenefitService } from '../../services/benefit.service';
 
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
     Hero,
     PpfInfoVisual,
     Process,
     Benefits,
     Company,
     Products,
-    // Services,
     Vision,
     Faq,
     Partners,
-    // Video,
     Footer
   ],
   templateUrl: './home.html',
@@ -47,21 +48,10 @@ import { BenefitService } from '../../services/benefit.service';
 })
 export class Home implements OnInit, OnDestroy {
 
-  images: string[] = [
-    // 'assets/images/ppf1.jpg',
-    // 'assets/images/ppf2.jpg',
-    'assets/images/ppf3.jpg'
-  ];
+  images: string[] = ['assets/images/ppf3.jpg'];
 
   currentIndex = 0;
   private sliderSub!: Subscription;
-
-  constructor(
-    private faqService: FaqService,
-    private processStepService: ProcessStepService,
-    private benefitService: BenefitService,
-     @Inject(PLATFORM_ID) private platformId: object,
-  ) {}
 
   products = [
     {
@@ -71,38 +61,67 @@ export class Home implements OnInit, OnDestroy {
     },
     {
       title: 'Matte PPF',
-      description: 'Elegant matte finish film that delivers a smooth satin look while protecting your vehicle from damage and UV exposure.',
+      description: 'Elegant matte finish film that delivers a smooth satin look while protecting your vehicle.',
       image: 'assets/images/ppf2.jpg'
     }
   ];
 
-  ngOnInit() {
-    this.sliderSub = interval(4000).subscribe(() => {
-      this.currentIndex =
-        (this.currentIndex + 1) % this.images.length;
-    });
+  constructor(
+    private renderer: Renderer2,
+    private faqService: FaqService,
+    private processStepService: ProcessStepService,
+    private benefitService: BenefitService,
+    @Inject(PLATFORM_ID) private platformId: object,
+    private title: Title,
+    private meta: Meta
+  ) {}
 
-     if (isPlatformBrowser(this.platformId)) {  
+  ngOnInit() {
+
+    if (isPlatformBrowser(this.platformId)) {
+
+      // SEO TITLE
+      this.title.setTitle("DiamondZ PPF | Premium Paint Protection Film");
+
+      // SEO META
+      this.meta.updateTag({
+        name: 'description',
+        content: 'Premium Paint Protection Film (PPF) by DiamondZ. Protect your car with gloss, matte and colored PPF solutions.'
+      });
+
+      // IMAGE SLIDER
+      this.sliderSub = interval(4000).subscribe(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      });
+
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+      this.addSchema();
     }
   }
 
   ngOnDestroy() {
-    if (this.sliderSub) {
-      this.sliderSub.unsubscribe();
-    }
+    this.sliderSub?.unsubscribe();
   }
 
-   loadProductsFromBackend() {
-    // example API response
-    const response = [
-      {
-        title: 'Gloss PPF',
-        description: 'From API...',
-        image: 'api-image-url-1'
-      }
-    ];
+  addSchema() {
+    const existing = document.querySelector('[data-schema="org"]');
+    if (existing) return;
 
-    this.products = response;
+    const script = this.renderer.createElement('script');
+
+    script.type = 'application/ld+json';
+    script.setAttribute('data-schema', 'org');
+
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DiamondZ PPF",
+      "url": "https://diamondzppf.com",
+      "logo": "https://diamondzppf.com/assets/images/logo.png",
+      "description": "Premium Paint Protection Film provider offering gloss, matte and colored PPF solutions."
+    });
+
+    this.renderer.appendChild(document.head, script);
   }
 }

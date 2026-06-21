@@ -1,10 +1,10 @@
 <nav class="navbar">
 
-  <!-- LOGO -->
-  <div class="logo" routerLink="/">
-    <img src="../assets/images/logo.png" />
+  <!-- LOGO (SEO FIXED) -->
+  <a class="logo" routerLink="/">
+    <img src="assets/images/logo.png" alt="DiamondZ PPF Logo" />
     <p>Paint Protection Film</p>
-  </div>
+  </a>
 
   <!-- MOBILE MENU BUTTON -->
   <div class="menu-toggle" (click)="toggleMenu()">
@@ -20,35 +20,29 @@
 
     <div class="nav-links">
 
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="closeMenu()">
+      <!-- HOME -->
+      <a routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         (click)="closeMenu()">
 
         Home
-
       </a>
 
-      <!-- DROPDOWN -->
+      <!-- PRODUCTS (SCALABLE + SEO SAFE) -->
       <div class="dropdown">
 
-        <a
-          class="dropdown-toggle"
-          (click)="toggleServices()">
+        <a class="dropdown-toggle"
+           (click)="toggleServices()">
 
           Products ▾
-
         </a>
 
-        <div
-          class="dropdown-menu"
-          *ngIf="isServicesOpen">
+        <div class="dropdown-menu" *ngIf="isServicesOpen">
 
-          <a
-            *ngFor="let service of services"
-            [routerLink]="service.route"
-            (click)="closeDropdown(); closeMenu()">
+          <a *ngFor="let service of services"
+             [routerLink]="service.route"
+             (click)="closeDropdown(); closeMenu()">
 
             {{ service.name }}
 
@@ -58,22 +52,20 @@
 
       </div>
 
-      <a
-        routerLink="/about"
-        routerLinkActive="active"
-        (click)="closeMenu()">
+      <!-- ABOUT -->
+      <a routerLink="/about"
+         routerLinkActive="active"
+         (click)="closeMenu()">
 
         About
-
       </a>
 
-      <a
-        routerLink="/contact"
-        routerLinkActive="active"
-        (click)="closeMenu()">
+      <!-- CONTACT -->
+      <a routerLink="/contact"
+         routerLinkActive="active"
+         (click)="closeMenu()">
 
         Contact
-
       </a>
 
        <!-- <a
@@ -87,45 +79,32 @@
 
     </div>
 
-    <!-- BUTTON -->
-    <button
-      class="quote-btn"
-      (click)="openQuotePopup()">
+    <!-- CTA BUTTON -->
+    <button class="quote-btn"
+            (click)="openQuotePopup()">
 
       Get A Quote
-
     </button>
+
   </div>
 
 </nav>
 
-<!-- =========================
-     QUOTE POPUP
-========================= -->
+<!-- QUOTE POPUP -->
+<div class="quote-popup-overlay"
+     *ngIf="showQuotePopup"
+     (click)="closeQuotePopup()">
 
-<div
-  class="quote-popup-overlay"
-  *ngIf="showQuotePopup"
-  (click)="closeQuotePopup()">
+  <div class="quote-popup-content"
+       (click)="$event.stopPropagation()">
 
-  <div
-    class="quote-popup-content"
-    (click)="$event.stopPropagation()">
-
-    <!-- CLOSE BUTTON -->
-
-    <button
-      class="close-popup"
-      (click)="closeQuotePopup()">
+    <button class="close-popup"
+            (click)="closeQuotePopup()">
 
       ✕
-
     </button>
-
-    <!-- QUOTE COMPONENT -->
 
     <app-quote></app-quote>
 
   </div>
-
 </div>
