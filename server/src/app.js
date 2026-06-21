@@ -7,6 +7,9 @@ const multer = require("multer");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
 
+const cloudinary = require("./config/cloudinary");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+
 const ppfPageRoutes = require("./modules/ppfPage/ppfPage.routes");
 const contactRoutes = require("./modules/contact/contact.routes");
 
@@ -14,51 +17,35 @@ const app = express();
 
 
 // ==========================
-// CORS CONFIG (PRODUCTION SAFE)
+// CORS
 // ==========================
 const allowedOrigins = [
   "http://localhost:4200",
   "http://localhost:5000",
-  "https://api.diamondzppf.com",
-  "https://diamondzppf.com"
+  "https://diamondzppf.com",
+  "https://api.diamondzppf.com"
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
+  origin(origin, callback) {
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
+      callback(null, true);
     } else {
-      console.log("❌ Blocked by CORS:", origin);
-      return callback(null, false);
+      console.log("Blocked CORS:", origin);
+      callback(null, false);
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
 
-// ==========================
-// FIX FOR PRE-FLIGHT REQUESTS (SAFE)
-// ==========================
-app.use((req, res, next) => {
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
-
-
-// ==========================
-// BODY PARSER
-// ==========================
 app.use(express.json());
 
 
 // ==========================
-// UPLOADS FOLDER
+// LOCAL UPLOAD FOLDER
 // ==========================
 const uploadsDir = path.join(__dirname, "..", "uploads");
 
@@ -66,21 +53,17 @@ if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
-
-// ==========================
-// STATIC FILES
-// ==========================
 app.use("/uploads", express.static(uploadsDir));
 
 
 // ==========================
-// MULTER STORAGE
+// LOCAL STORAGE
 // ==========================
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+const localStorage = multer.diskStorage({
+  destination(req, file, cb) {
     cb(null, uploadsDir);
   },
-  filename: (req, file, cb) => {
+  filename(req, file, cb) {
     const safeName = file.originalname
       .toLowerCase()
       .replace(/\s+/g, "-")
@@ -90,35 +73,59 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({
-  storage,
-  limits: { fileSize: 5 * 1024 * 1024 }
+
+// ==========================
+// CLOUDINARY STORAGE
+// ==========================
+const cloudStorage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "diamondz",
+    allowed_formats: ["jpg", "jpeg", "png", "webp"]
+  }
 });
 
 
 // ==========================
-// SINGLE FILE UPLOAD
+// USE LOCAL OR CLOUDINARY
+// ==========================
+const upload = multer({
+  storage:
+    process.env.NODE_ENV === "production"
+      ? cloudStorage
+      : localStorage,
+
+  limits: {
+    fileSize: 5 * 1024 * 1024
+  }
+});
+
+
+// ==========================
+// UPLOAD API
 // ==========================
 app.post("/api/uploads", upload.single("file"), (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({
-        success: false,
-        message: "No file uploaded"
-      });
-    }
 
-    res.status(200).json({
-      success: true,
-      url: `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`
-    });
-
-  } catch (error) {
-    res.status(500).json({
+  if (!req.file) {
+    return res.status(400).json({
       success: false,
-      message: error.message
+      message: "No file uploaded"
     });
   }
+
+  let imageUrl;
+
+  if (process.env.NODE_ENV === "production") {
+    imageUrl = req.file.path;
+  } else {
+    imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+  }
+
+  res.json({
+    success: true,
+    url: imageUrl
+  });
+
 });
 
 
@@ -138,17 +145,13 @@ app.use("/api/admin", require("./modules/admin/admin.routes"));
 // ==========================
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
-// ==========================
-// DOCS REDIRECT
-// ==========================
 app.get("/docs", (req, res) => {
   res.redirect("/api-docs");
 });
 
 
 // ==========================
-// HEALTH CHECK
+// HEALTH
 // ==========================
 app.get("/", (req, res) => {
   res.json({
@@ -159,13 +162,14 @@ app.get("/", (req, res) => {
 
 
 // ==========================
-// GLOBAL ERROR SAFETY (OPTIONAL BUT GOOD)
+// ERROR HANDLER
 // ==========================
 app.use((err, req, res, next) => {
-  console.error("🔥 Server Error:", err.message);
+  console.error(err);
+
   res.status(500).json({
     success: false,
-    message: "Internal Server Error"
+    message: err.message
   });
 });
 
