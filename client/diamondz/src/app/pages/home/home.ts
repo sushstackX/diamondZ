@@ -78,18 +78,17 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    // ✅ SEO ALWAYS RUNS (IMPORTANT FOR GOOGLE)
+    this.title.setTitle("DiamondZ PPF | Premium Paint Protection Film in Bengaluru");
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'DiamondZ PPF offers premium Paint Protection Film in Bengaluru. Gloss, matte & self-healing protection for cars with long-lasting durability.'
+    });
+
+    // ✅ ONLY BROWSER LOGIC
     if (isPlatformBrowser(this.platformId)) {
 
-      // SEO TITLE
-      this.title.setTitle("DiamondZ PPF | Premium Paint Protection Film");
-
-      // SEO META
-      this.meta.updateTag({
-        name: 'description',
-        content: 'Premium Paint Protection Film (PPF) by DiamondZ. Protect your car with gloss, matte and colored PPF solutions.'
-      });
-
-      // IMAGE SLIDER
       this.sliderSub = interval(4000).subscribe(() => {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
       });
@@ -105,6 +104,7 @@ export class Home implements OnInit, OnDestroy {
   }
 
   addSchema() {
+
     const existing = document.querySelector('[data-schema="org"]');
     if (existing) return;
 
@@ -118,8 +118,12 @@ export class Home implements OnInit, OnDestroy {
       "@type": "Organization",
       "name": "DiamondZ PPF",
       "url": "https://diamondzppf.com",
-      "logo": "https://diamondzppf.com/assets/images/logo.png",
-      "description": "Premium Paint Protection Film provider offering gloss, matte and colored PPF solutions."
+      "logo": "https://diamondzppf.com/assets/images/logo2-1.png",
+      "description": "Premium Paint Protection Film provider offering gloss, matte and colored PPF solutions.",
+      "sameAs": [
+        "https://www.instagram.com/diamondzppf",
+        "https://www.facebook.com/diamondzppf"
+      ]
     });
 
     this.renderer.appendChild(document.head, script);
