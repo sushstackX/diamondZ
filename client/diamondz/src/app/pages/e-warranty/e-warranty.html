@@ -2,7 +2,6 @@
 <section class="warranty-hero">
   <div class="warranty-hero-content">
 
-    <span class="warranty-badge">Diamondz PPF Warranty</span>
 
     <h1 class="warranty-title">Register Your Warranty</h1>
 
@@ -122,13 +121,17 @@
 
       <div class="form-group">
         <label class="form-label">Product Type *</label>
-        <select [(ngModel)]="formData.productType"
-                name="productType"
-                required
-                class="form-control">
-          <option value="">Select Product</option>
-          <option value="Diamondz PPF">Diamondz PPF</option>
-          <option value="KnightSkin">KnightSkin</option>
+
+        <select
+          [(ngModel)]="formData.productType"
+          name="productType"
+          required
+          class="form-control product-select">
+
+          <option value="" disabled selected>Select Product</option>
+          <option value="Gloss PPF">Gloss PPF</option>
+          <option value="Matte PPF">Matte PPF</option>
+          <option value="Colored PPF">Colored PPF</option>
         </select>
       </div>
 
