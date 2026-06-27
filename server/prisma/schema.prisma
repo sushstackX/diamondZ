@@ -55,3 +55,62 @@ model PpfPage {
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
 }
+
+
+
+model WarrantyRegistration {
+  id                    Int      @id @default(autoincrement())
+
+  // Warranty Details
+  warrantyNumber        String   @unique
+
+  // Customer Details
+  customerName          String
+  mobileNumber          String
+  email                 String?
+
+  // Vehicle Details
+  vehicleBrand          String
+  vehicleModel          String
+  vehicleRegistration   String   @unique
+
+  // Installation Details
+  productType           String
+  installationDate      DateTime
+  installerName         String
+  invoiceNumber         String?
+
+  // Optional Fields
+  installationArea      String?
+  remarks               String?
+
+  // Audit
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  // Soft Delete
+  isDeleted             Boolean  @default(false)
+  deletedAt             DateTime?
+
+  // Relations
+  files                 WarrantyFile[]
+
+  @@index([mobileNumber])
+  @@index([warrantyNumber])
+}
+
+model WarrantyFile {
+  id                    Int      @id @default(autoincrement())
+
+  warrantyId            Int
+
+  publicId              String
+  secureUrl             String
+  resourceType          String
+
+  createdAt             DateTime @default(now())
+
+  warranty WarrantyRegistration @relation(fields: [warrantyId], references: [id], onDelete: Cascade)
+
+  @@index([warrantyId])
+}

@@ -1,22 +1,27 @@
 require("dotenv").config();
+
+const http = require("http");
+
 const app = require("./app");
 
-// ✅ Debug DATABASE_URL (safe)
-console.log("ENV CHECK:");
+const server = http.createServer(app);
 
-if (process.env.DATABASE_URL) {
-  const url = process.env.DATABASE_URL;
-  const safePreview = url.includes("@")
-    ? url.split("@")[0] + "@***"
-    : url.substring(0, 30);
+server.timeout = 600000;
 
-  console.log("DATABASE_URL loaded:", safePreview);
-} else {
-  console.log("❌ DATABASE_URL is NOT loaded");
-}
+server.headersTimeout = 610000;
+
+server.keepAliveTimeout = 600000;
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+server.listen(PORT, () => {
+
+  console.log("================================");
+
+  console.log("Server Running");
+
+  console.log("Port :", PORT);
+
+  console.log("================================");
+
 });

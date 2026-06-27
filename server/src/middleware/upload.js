@@ -1,31 +1,71 @@
-const multer = require('multer');
+const multer = require("multer");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("../config/cloudinary");
 
-const path = require('path');
+const storage = new CloudinaryStorage({
+  cloudinary,
 
-const storage = multer.diskStorage({
+  params: async (req, file) => {
 
-  destination: (req, file, cb) => {
+    const ext = file.originalname
+      .split(".")
+      .pop()
+      .toLowerCase();
 
-    cb(null, 'uploads/');
+    const isVideo = file.mimetype.startsWith("video");
 
+    return {
+      folder: "diamondz/warranty",
+
+      resource_type: isVideo ? "video" : "image",
+
+      public_id:
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .substring(2, 8),
+
+      format: ext
+    };
+  }
+});
+
+const upload = multer({
+
+  storage,
+
+  limits: {
+
+    files: 10,
+
+    fileSize: 5 * 1024 * 1024
   },
 
-  filename: (req, file, cb) => {
+  fileFilter(req, file, cb) {
 
-    const uniqueName =
-      Date.now() +
-      '-' +
-      Math.round(Math.random() * 1e9);
+    const allowed = [
 
-    cb(
-      null,
-      uniqueName + path.extname(file.originalname)
-    );
+      "image/jpeg",
+      "image/jpg",
+      "image/png",
+      "image/webp",
+      "video/mp4"
 
+    ];
+
+    if (!allowed.includes(file.mimetype)) {
+
+      return cb(
+        new Error(
+          "Only JPG, PNG, WEBP and MP4 files are allowed"
+        )
+      );
+    }
+
+    cb(null, true);
   }
 
 });
-
-const upload = multer({ storage });
 
 module.exports = upload;

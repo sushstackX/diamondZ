@@ -1,0 +1,199 @@
+<!-- HERO -->
+<section class="warranty-hero">
+  <div class="warranty-hero-content">
+
+    <span class="warranty-badge">Diamondz PPF Warranty</span>
+
+    <h1 class="warranty-title">Register Your Warranty</h1>
+
+    <p class="warranty-subtitle">
+      Secure your Paint Protection Film warranty and enjoy long-lasting protection.
+    </p>
+
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="warranty-benefits">
+  <div class="benefits-grid">
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🛡️</div>
+      <h3 class="benefit-title">Genuine Coverage</h3>
+      <p class="benefit-text">Official warranty protection for your installation.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🚗</div>
+      <h3 class="benefit-title">Vehicle Protection</h3>
+      <p class="benefit-text">Protection against defects, yellowing and damage.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3 class="benefit-title">Easy Verification</h3>
+      <p class="benefit-text">Check warranty status anytime via mobile.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="warrantyFormSection" class="warranty-form-section">
+
+  <div class="warranty-form-wrapper">
+
+    <div class="form-header">
+      <h2 class="form-title">Warranty Registration Form</h2>
+      <p class="form-subtitle">Fill in your details below.</p>
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div *ngIf="errorMessage" class="alert error">
+      {{ errorMessage }}
+    </div>
+
+    <form #warrantyForm="ngForm"
+          (ngSubmit)="submitWarranty(warrantyForm)"
+          class="warranty-form"
+          novalidate
+          enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label class="form-label">Customer Name *</label>
+        <input type="text"
+               [(ngModel)]="formData.customerName"
+               name="customerName"
+               required
+               #customerNameInput="ngModel"
+               [class.invalid-field]="customerNameInput.invalid && customerNameInput.touched"
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Mobile Number *</label>
+        <input type="tel"
+               [(ngModel)]="formData.mobileNumber"
+               name="mobileNumber"
+               maxlength="10"
+               required
+               pattern="[0-9]{10}"
+               #mobileInput="ngModel"
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email *</label>
+        <input type="email"
+               [(ngModel)]="formData.email"
+               name="email"
+               required
+               email
+               #emailInput="ngModel"
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Vehicle Brand *</label>
+        <input type="text"
+               [(ngModel)]="formData.vehicleBrand"
+               name="vehicleBrand"
+               required
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Vehicle Model *</label>
+        <input type="text"
+               [(ngModel)]="formData.vehicleModel"
+               name="vehicleModel"
+               required
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Registration Number *</label>
+        <input type="text"
+               [(ngModel)]="formData.vehicleRegistration"
+               name="vehicleRegistration"
+               required
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Product Type *</label>
+        <select [(ngModel)]="formData.productType"
+                name="productType"
+                required
+                class="form-control">
+          <option value="">Select Product</option>
+          <option value="Diamondz PPF">Diamondz PPF</option>
+          <option value="KnightSkin">KnightSkin</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Installation Date *</label>
+        <input type="date"
+               [(ngModel)]="formData.installationDate"
+               name="installationDate"
+               required
+               class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Installer Name *</label>
+        <input type="text"
+               [(ngModel)]="formData.installerName"
+               name="installerName"
+               required
+               class="form-control" />
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Invoice Number</label>
+        <input type="text"
+               [(ngModel)]="formData.invoiceNumber"
+               name="invoiceNumber"
+               class="form-control" />
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Installation Area</label>
+        <input type="text"
+               [(ngModel)]="formData.installationArea"
+               name="installationArea"
+               class="form-control" />
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Remarks</label>
+        <textarea rows="4"
+                  [(ngModel)]="formData.remarks"
+                  name="remarks"
+                  class="form-control"></textarea>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Upload Images / Invoice</label>
+        <input #fileInput
+               type="file"
+               name="files"
+               multiple
+               (change)="onFileChange($event)"
+               accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4"
+               class="form-control" />
+      </div>
+
+      <div class="form-group form-submit">
+        <button type="submit"
+                [disabled]="loading || warrantyForm.invalid"
+                class="submit-btn">
+          {{ loading ? 'Submitting...' : 'Register Warranty' }}
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</section>

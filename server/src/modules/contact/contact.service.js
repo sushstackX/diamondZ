@@ -15,6 +15,7 @@ const sendEnquiryEmail = async (data) => {
   const {
     name,
     email,
+    phone,
     company,
     enquiryType,
     message
@@ -31,6 +32,7 @@ const sendEnquiryEmail = async (data) => {
       <h2>New Enquiry Received</h2>
       <p><b>Name:</b> ${name}</p>
       <p><b>Email:</b> ${email}</p>
+      <p><b>Phone:</b> ${phone}</p>
       <p><b>Company:</b> ${company}</p>
       <p><b>Enquiry Type:</b> ${enquiryType}</p>
       <p><b>Message:</b> ${message}</p>

@@ -4,6 +4,7 @@ const benefitDocs = require("../modules/benefit/benefit.swagger");
 const processStepDocs = require("../modules/processStep/processStep.swagger");
 const faqDocs = require("../modules/faq/faq.swagger");
 const ppfPageDocs = require("../modules/ppfPage/ppfPage.swagger");
+const warrantyDocs = require("../modules/warranty/warranty.swagger");
 
 const options = {
   definition: {
@@ -26,6 +27,7 @@ const options = {
       { name: "Process Steps", description: "Process Steps API" },
       { name: "FAQ", description: "FAQ API" },
       { name: "PPF Types", description: "PPF Types API" },
+      { name: "Warranty", description: "Warranty Registration API" },
     ],
 
     paths: {
@@ -33,6 +35,7 @@ const options = {
       ...processStepDocs.paths,
       ...faqDocs.paths,
       ...ppfPageDocs.paths,
+      ...warrantyDocs.paths,
     },
   },
 

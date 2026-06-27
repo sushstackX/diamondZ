@@ -9,6 +9,7 @@ import { PpfDetails } from './sections/ppf-details/ppf-details';
 import { PpfDetailsResolver } from './sections/ppf-details/ppf-details.resolver';
 import { Admin } from './pages/admin/admin';
 import { NotFound } from './pages/not-found/not-found';
+import { EWarranty } from './pages/e-warranty/e-warranty';
 
 
 export const routes: Routes = [
@@ -33,6 +34,8 @@ export const routes: Routes = [
   },
   { path: 'contact', component: Contact },
   { path: 'quote', component: Quote },
+  { path: 'e-warranty', component: EWarranty },
+
   // { path: 'admin', component: Admin },
   { path: '**', component: NotFound }
 
