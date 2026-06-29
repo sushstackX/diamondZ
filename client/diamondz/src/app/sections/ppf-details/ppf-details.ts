@@ -109,7 +109,7 @@ export class PpfDetails implements OnInit, OnDestroy {
 
       'gloss-ppf': {
         title:
-          'Gloss PPF | DiamondZ PPF Bangalore',
+          'Gloss PPF | Diamondz PPF Bangalore',
         description:
           'Premium Gloss Paint Protection Film with self-healing technology, high-gloss finish and long-lasting protection.',
         schemaName:
@@ -118,7 +118,7 @@ export class PpfDetails implements OnInit, OnDestroy {
 
       'matte-ppf': {
         title:
-          'Matte PPF | DiamondZ PPF Bangalore',
+          'Matte PPF | Diamondz PPF Bangalore',
         description:
           'Premium Matte Paint Protection Film delivering a satin finish while protecting against scratches and environmental damage.',
         schemaName:
@@ -127,7 +127,7 @@ export class PpfDetails implements OnInit, OnDestroy {
 
       'colored-ppf': {
         title:
-          'Colored PPF | DiamondZ PPF Bangalore',
+          'Colored PPF | Diamondz PPF Bangalore',
         description:
           'Premium Colored Paint Protection Film combining style, color transformation and superior paint protection.',
         schemaName:
@@ -142,7 +142,7 @@ export class PpfDetails implements OnInit, OnDestroy {
     this.seoService.updateSeo(
       seo.title,
       seo.description,
-      `${slug}, PPF Bangalore, Paint Protection Film, DiamondZ PPF`
+      `${slug}, PPF Bangalore, Paint Protection Film, DiamondzPPF`
     );
 
     this.seoService.addSchema(
@@ -152,7 +152,7 @@ export class PpfDetails implements OnInit, OnDestroy {
         "name": seo.schemaName,
         "provider": {
           "@type": "Organization",
-          "name": "DiamondZ PPF"
+          "name": "Diamondz PPF"
         },
         "url":
           `https://diamondzppf.com/services/${slug}`

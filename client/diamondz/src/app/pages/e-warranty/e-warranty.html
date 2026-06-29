@@ -17,19 +17,19 @@
   <div class="benefits-grid">
 
     <div class="benefit-card">
-      <div class="benefit-icon">🛡️</div>
+      <div class="benefit-icon"></div>
       <h3 class="benefit-title">Genuine Coverage</h3>
       <p class="benefit-text">Official warranty protection for your installation.</p>
     </div>
 
     <div class="benefit-card">
-      <div class="benefit-icon">🚗</div>
+      <div class="benefit-icon"></div>
       <h3 class="benefit-title">Vehicle Protection</h3>
       <p class="benefit-text">Protection against defects, yellowing and damage.</p>
     </div>
 
     <div class="benefit-card">
-      <div class="benefit-icon">⚡</div>
+      <div class="benefit-icon"></div>
       <h3 class="benefit-title">Easy Verification</h3>
       <p class="benefit-text">Check warranty status anytime via mobile.</p>
     </div>
@@ -71,14 +71,16 @@
 
       <div class="form-group">
         <label class="form-label">Mobile Number *</label>
-        <input type="tel"
-               [(ngModel)]="formData.mobileNumber"
-               name="mobileNumber"
-               maxlength="10"
-               required
-               pattern="[0-9]{10}"
-               #mobileInput="ngModel"
-               class="form-control" />
+        <input
+            type="tel"
+            [(ngModel)]="formData.mobileNumber"
+            name="mobileNumber"
+            maxlength="10"
+            required
+            #mobileInput="ngModel"
+            (input)="allowOnlyNumbers($event)"
+            class="form-control"
+      />
       </div>
 
       <div class="form-group">

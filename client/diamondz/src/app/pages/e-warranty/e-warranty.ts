@@ -142,4 +142,31 @@ export class EWarranty {
       this.fileInput.nativeElement.value = '';
     }
   }
+
+  onlyNumberKey(event: KeyboardEvent): void {
+  const charCode = event.which || event.keyCode;
+
+  // Allow only 0-9
+  if (charCode < 48 || charCode > 57) {
+    event.preventDefault();
+  }
+}
+
+onPasteNumber(event: ClipboardEvent): void {
+  const pastedText = event.clipboardData?.getData('text') || '';
+
+  if (!/^\d+$/.test(pastedText)) {
+    event.preventDefault();
+  }
+}
+
+allowOnlyNumbers(event: Event): void {
+  const input = event.target as HTMLInputElement;
+
+  // Keep only digits and limit to 10 characters
+  const value = input.value.replace(/[^0-9]/g, '').slice(0, 10);
+
+  input.value = value;
+  this.formData.mobileNumber = value;
+}
 }

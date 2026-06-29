@@ -27,9 +27,9 @@ export class About implements OnInit {
 
     // SEO
     this.seoService.updateSeo(
-      'About DiamondZ PPF | Premium Paint Protection Film in Bangalore',
-      'Learn about DiamondZ PPF, our premium Paint Protection Film solutions, global sourcing, TPU technology, and commitment to automotive protection excellence.',
-      'About DiamondZ PPF, PPF Bangalore, Paint Protection Film Bangalore, TPU PPF, Car Protection Film'
+      'About Diamondz PPF | Premium Paint Protection Film in Bangalore',
+      'Learn about DiamondzPPF, our premium Paint Protection Film solutions, global sourcing, TPU technology, and commitment to automotive protection excellence.',
+      'About DiamondzPPF, PPF Bangalore, Paint Protection Film Bangalore, TPU PPF, Car Protection Film'
     );
 
     // Schema
@@ -37,10 +37,10 @@ export class About implements OnInit {
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "About DiamondZ PPF",
+        "name": "About Diamondz PPF",
         "url": "https://diamondzppf.com/about",
         "description":
-          "Learn about DiamondZ PPF and our premium Paint Protection Film solutions."
+          "Learn about Diamondz PPF and our premium Paint Protection Film solutions."
       },
       'about-schema'
     );

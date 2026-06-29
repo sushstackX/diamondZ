@@ -69,9 +69,9 @@ export class Contact implements OnInit {
 
     // SEO
     this.seoService.updateSeo(
-      'Contact DiamondZ PPF | Paint Protection Film Bangalore',
-      'Contact DiamondZ PPF for Gloss PPF, Matte PPF, Colored PPF and premium paint protection solutions in Bangalore.',
-      'Contact DiamondZ PPF, PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF'
+      'Contact Diamondz PPF | Paint Protection Film Bangalore',
+      'Contact Diamondz PPF for Gloss PPF, Matte PPF, Colored PPF and premium paint protection solutions in Bangalore.',
+      'Contact Diamondz PPF, PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF'
     );
 
     // Schema
@@ -79,7 +79,7 @@ export class Contact implements OnInit {
       {
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Contact DiamondZ PPF",
+        "name": "Contact Diamondz PPF",
         "url": "https://diamondzppf.com/contact"
       },
       'contact-schema'

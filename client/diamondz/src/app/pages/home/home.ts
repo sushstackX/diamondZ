@@ -78,9 +78,9 @@ export class Home implements OnInit, OnDestroy {
 
     // SEO
     this.seoService.updateSeo(
-      'DiamondZ PPF | Premium Paint Protection Film in Bangalore',
-      'DiamondZ PPF provides premium Gloss PPF, Matte PPF and Colored PPF solutions in Bangalore with advanced paint protection technology.',
-      'PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF, Car Protection Film, DiamondZ PPF'
+      'Diamondz PPF | Premium Paint Protection Film in Bangalore',
+      'Diamondz PPF provides premium Gloss PPF, Matte PPF and Colored PPF solutions in Bangalore with advanced paint protection technology.',
+      'PPF Bangalore, Paint Protection Film Bangalore, Gloss PPF, Matte PPF, Colored PPF, Car Protection Film, DiamondzPPF'
     );
 
     if (isPlatformBrowser(this.platformId)) {
@@ -101,7 +101,7 @@ export class Home implements OnInit, OnDestroy {
         {
           "@context": "https://schema.org",
           "@type": "AutoRepair",
-          "name": "DiamondZ PPF",
+          "name": "Diamondz PPF",
           "url": "https://diamondzppf.com",
           "logo": "https://diamondzppf.com/assets/images/logo2-1.png",
           "image": "https://diamondzppf.com/assets/images/logo2-1.png",
