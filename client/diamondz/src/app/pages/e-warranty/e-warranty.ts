@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { WarrantyService } from '../../services/warranty.service';
 import Swal from 'sweetalert2';
+import { Footer } from '../../layout/footer/footer';
 
 @Component({
   selector: 'app-e-warranty',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,Footer],
   templateUrl: './e-warranty.html',
   styleUrls: ['./e-warranty.css']
 })
