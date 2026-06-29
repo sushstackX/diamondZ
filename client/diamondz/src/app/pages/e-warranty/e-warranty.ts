@@ -170,4 +170,11 @@ allowOnlyNumbers(event: Event): void {
   input.value = value;
   this.formData.mobileNumber = value;
 }
+
+  scrollToForm() {
+    const el = document.querySelector('#formSection');
+    el?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 }

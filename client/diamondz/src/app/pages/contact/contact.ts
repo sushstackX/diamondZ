@@ -48,7 +48,6 @@ export class Contact implements OnInit {
     this.contactForm = this.fb.group({
 
       name: ['', Validators.required],
-
       email: [
         '',
         [
@@ -56,11 +55,8 @@ export class Contact implements OnInit {
           Validators.email
         ]
       ],
-
       company: ['', Validators.required],
-
       enquiryType: ['', Validators.required],
-
       message: ['', Validators.required]
     });
   }
@@ -114,16 +110,12 @@ export class Contact implements OnInit {
     this.contactService
       .submitInquiry(this.contactForm.value)
       .subscribe({
-
         next: (res: any) => {
-
           console.log(
             ' Enquiry Submitted:',
             res
           );
-
           Swal.fire({
-
             icon: 'success',
             title: 'Enquiry Submitted',
             text: 'Thank you! Our team will contact you soon.',
@@ -136,13 +128,9 @@ export class Contact implements OnInit {
         },
 
         error: (err) => {
-
           console.log(err);
-
           this.isSubmitting = false;
-
           Swal.fire({
-
             icon: 'error',
             title: 'Submission Failed',
             text: 'Something went wrong. Please try again.',
@@ -153,9 +141,7 @@ export class Contact implements OnInit {
   }
 
   scrollToForm() {
-
     const el = document.querySelector('#formSection');
-
     el?.scrollIntoView({
       behavior: 'smooth'
     });
