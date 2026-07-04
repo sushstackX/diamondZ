@@ -12,8 +12,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 60px;
-  background: #12121a;
-  border-bottom: 1px solid #1e2a3a;
+  background: #0b0b0f;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
   z-index: 9999;
   box-sizing: border-box;
 }
@@ -109,7 +109,7 @@
   content: '';
 
   position: absolute;
-  left: 0;
+  left: 30%;
   bottom: -7px;
 
   width: 0%;
@@ -121,7 +121,7 @@
 
 .nav-links > a:hover::after,
 .nav-links > a.active::after {
-  width: 100%;
+  width: 40%;
 }
 
 /* DROPDOWN */
