@@ -147,24 +147,11 @@
 
 <body>
 
-      <!-- Visible branding: logo, name, tagline and site link -->
-      <style>
-            .branding{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#000}
-            .brand-logo{width:72px;height:auto;display:block;background:#000;padding:6px;border-radius:8px}
-            .brand-text h1{margin:0;font-size:1.25rem;color:#fff}
-            .brand-text .tagline{margin:2px 0 6px;color:#ddd;font-size:0.95rem}
-            .brand-link{color:#fff;text-decoration:underline;font-size:0.95rem}
-            @media (prefers-color-scheme:dark){.branding{background:#000}.brand-text h1{color:#fff}.brand-text .tagline{color:#ddd}}
-      </style>
-
-      <header class="branding">
-            <img src="/assets/images/logo2-1.png" alt="Diamondz PPF logo" class="brand-logo">
-            <div class="brand-text">
-                  <h1>Diamondz PPF</h1>
-                  <div class="tagline">Premium Paint Protection Film in Bangalore</div>
-                  <a class="brand-link" href="https://diamondzppf.com/">Diamondz PPF</a>
-            </div>
-      </header>
+  <!-- Hidden branding signal for Google -->
+  <header style="display:none">
+    <h1>Diamondz PPF</h1>
+    <p>Premium Paint Protection Film in Bangalore</p>
+  </header>
 
   <app-root></app-root>
 
